@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UIViewController {
 
@@ -18,23 +19,22 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupRemoteConfigDefaults()
-        displayNewValues()
-        fetchRemoteConfig()
+        displayNewValues(for: RemoteConfigService.shared.remoteConfig)
+        RemoteConfigService.shared.fetchRemoteConfig {
+            self.displayNewValues(for: RemoteConfigService.shared.remoteConfig)
+        }
     }
     
     // MARK: - Methods
     func setupRemoteConfigDefaults() {
-        let defaultValue = ["label_text" : "Hello world!" as NSObject]
-        remoteConfig.setDefaults(defaultValue)
+        let defaultValue = ["label_text" : "Hello world!" as NSObject,
+                            "boolCheck" : "false" as NSObject,
+                            "number_value" : "1000" as NSObject]
         
-        let defaultValueBool = ["boolCheck" : "false" as NSObject]
-        remoteConfig.setDefaults(defaultValueBool)
-        
-        let defaultValueNumber = ["number_value" : "1000" as NSObject]
-        remoteConfig.setDefaults(defaultValueNumber)
+        RemoteConfigService.shared.remoteConfig.setDefaults(defaultValue)
     }
 
-    func displayNewValues() {
+    func displayNewValues(for remoteConfig: RemoteConfig) {
         let newLabelText = remoteConfig.configValue(forKey: "label_text").stringValue ?? ""
         rcLabel.text = newLabelText
         
@@ -43,15 +43,6 @@ class ViewController: UIViewController {
         
         let newNumberText = remoteConfig.configValue(forKey: "number_value").numberValue
         rcNumberLabel.text = String(newNumberText as! Int)
-    }
-    
-    func fetchRemoteConfig() {
-        remoteConfig.fetch(withExpirationDuration: 0) { [unowned self] (status, error) in
-            guard error == nil else { return }
-            print("Got the value from Remote Config!")
-            remoteConfig.activate()
-            self.displayNewValues()
-        }
     }
 }
 

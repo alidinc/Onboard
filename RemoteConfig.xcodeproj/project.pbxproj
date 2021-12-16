@@ -15,6 +15,7 @@
 		DA0030D4276B7BAA001EDACB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA0030D3276B7BAA001EDACB /* Assets.xcassets */; };
 		DA0030D7276B7BAA001EDACB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA0030D5276B7BAA001EDACB /* LaunchScreen.storyboard */; };
 		DA0030DF276B7CC6001EDACB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA0030DE276B7CC6001EDACB /* GoogleService-Info.plist */; };
+		DA0030E1276B903E001EDACB /* RemoteConfigService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0030E0276B903E001EDACB /* RemoteConfigService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		DA0030D6276B7BAA001EDACB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA0030D8276B7BAA001EDACB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA0030DE276B7CC6001EDACB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DA0030E0276B903E001EDACB /* RemoteConfigService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RemoteConfigService.swift; path = ../../remoteConfig/RemoteConfig/RemoteConfigService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				DA0030CA276B7BA9001EDACB /* AppDelegate.swift */,
 				DA0030CC276B7BA9001EDACB /* SceneDelegate.swift */,
 				DA0030CE276B7BA9001EDACB /* ViewController.swift */,
+				DA0030E0276B903E001EDACB /* RemoteConfigService.swift */,
 				DA0030D0276B7BA9001EDACB /* Main.storyboard */,
 				DA0030D3276B7BAA001EDACB /* Assets.xcassets */,
 				DA0030D5276B7BAA001EDACB /* LaunchScreen.storyboard */,
@@ -83,7 +86,6 @@
 				0A535B600A8D3EFF0C044638 /* Pods-RemoteConfig.debug.xcconfig */,
 				A8E9230A60D435F59D751930 /* Pods-RemoteConfig.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -214,6 +216,7 @@
 				DA0030CF276B7BA9001EDACB /* ViewController.swift in Sources */,
 				DA0030CB276B7BA9001EDACB /* AppDelegate.swift in Sources */,
 				DA0030CD276B7BA9001EDACB /* SceneDelegate.swift in Sources */,
+				DA0030E1276B903E001EDACB /* RemoteConfigService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
