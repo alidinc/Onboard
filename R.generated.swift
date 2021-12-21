@@ -205,6 +205,79 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
+  /// This `R.string` struct is generated, and contains static references to 2 localization tables.
+  struct string {
+    /// This `R.string.launchScreen` struct is generated, and contains static references to 0 localization keys.
+    struct launchScreen {
+      fileprivate init() {}
+    }
+
+    /// This `R.string.localizable` struct is generated, and contains static references to 3 localization keys.
+    struct localizable {
+      /// en translation: Capture Photo
+      ///
+      /// Locales: en
+      static let capturePhoto = Rswift.StringResource(key: "Capture Photo", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Pick From Library
+      ///
+      /// Locales: en
+      static let pickFromLibrary = Rswift.StringResource(key: "Pick From Library", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Tap here to see capitals ->
+      ///
+      /// Locales: en
+      static let tapHereToSeeCapitals = Rswift.StringResource(key: "Tap here to see capitals ->", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+
+      /// en translation: Capture Photo
+      ///
+      /// Locales: en
+      static func capturePhoto(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Capture Photo", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Capture Photo"
+        }
+
+        return NSLocalizedString("Capture Photo", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Pick From Library
+      ///
+      /// Locales: en
+      static func pickFromLibrary(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Pick From Library", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Pick From Library"
+        }
+
+        return NSLocalizedString("Pick From Library", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Tap here to see capitals ->
+      ///
+      /// Locales: en
+      static func tapHereToSeeCapitals(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Tap here to see capitals ->", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Tap here to see capitals ->"
+        }
+
+        return NSLocalizedString("Tap here to see capitals ->", bundle: bundle, comment: "")
+      }
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+
   fileprivate struct intern: Rswift.Validatable {
     fileprivate static func validate() throws {
       try _R.validate()

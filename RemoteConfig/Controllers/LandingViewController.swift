@@ -15,7 +15,7 @@ class LandingViewController: UIViewController {
     private lazy var captureButton: UIButton = {
         let button = UIButton()
         button.addTarget(self, action: #selector(configureImagePicker(for:)), for: .touchUpInside)
-        button.setTitle("Capture Photo", for: .normal)
+        button.setTitle(R.string.localizable.capturePhoto(), for: .normal)
         button.tag = 0
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -23,7 +23,7 @@ class LandingViewController: UIViewController {
     private lazy var pickFromLibraryButton: UIButton = {
         let button = UIButton()
         button.addTarget(self, action: #selector(configureImagePicker(for:)), for: .touchUpInside)
-        button.setTitle("Pick From Library", for: .normal)
+        button.setTitle(R.string.localizable.pickFromLibrary(), for: .normal)
         button.tag = 1
         button.translatesAutoresizingMaskIntoConstraints = false
         return button

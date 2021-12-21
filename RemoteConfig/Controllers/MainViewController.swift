@@ -8,6 +8,7 @@
 import UIKit
 
 class MainViewController: UIViewController {
+
     // MARK: - Properties
     private var rcLabel: UILabel = {
         let label = UILabel()
@@ -31,7 +32,7 @@ class MainViewController: UIViewController {
         let button = UIButton()
         button.addTarget(self, action: #selector(navigateToCountriesVC), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Tap here to check out capitals ->", for: .normal)
+        button.setTitle(R.string.localizable.tapHereToSeeCapitals(), for: .normal)
         return button
     }()
     // MARK: - Lifecycle

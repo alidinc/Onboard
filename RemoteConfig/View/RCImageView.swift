@@ -23,7 +23,6 @@ class RCImageView: UIImageView {
     // MARK: - Methods
     private func configure() {
         layer.cornerRadius                        = 22
-        self.frame.size                           = CGSize(width: 100, height: 100)
         contentMode                               = .scaleAspectFit
         clipsToBounds                             = true
         image                                     = placeholderImage
