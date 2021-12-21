@@ -18,7 +18,6 @@ class CountriesViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configureCollectionVC()
         fetchDataFromRemoteConfig()
         configureDataSource()

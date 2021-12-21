@@ -10,7 +10,7 @@ import UIKit
 class RCImageView: UIImageView {
 
     // MARK: - Properties
-    let placeholderImage = UIImage(named: "image")!
+    private let placeholderImage = UIImage(named: "image")!
 
     // MARK: - Initialize
     override init(frame: CGRect) {

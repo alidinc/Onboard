@@ -9,7 +9,7 @@ target 'RemoteConfig' do
 pod ‘Firebase’
 pod ‘Firebase/Analytics’
 pod ‘Firebase/RemoteConfig’
-pod 'SVGKit'
 pod 'SwiftLint'
 pod 'R.swift'
+pod 'FlagKit'
 end

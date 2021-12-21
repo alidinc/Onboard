@@ -27,7 +27,7 @@ class MainViewController: UIViewController {
         label.textColor = .green
         return label
     }()
-    private var rcButton: UIButton = {
+    private lazy var rcButton: UIButton = {
         let button = UIButton()
         button.addTarget(self, action: #selector(navigateToCountriesVC), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false

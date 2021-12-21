@@ -24,8 +24,7 @@ opt_in_rules: # some rules are only opt-in
 excluded: # paths to ignore during linting. Takes precedence over `included`.
   - Carthage
   - Pods
-  - Pods\ R.swift.Library
-  - Pods\ R.swift
+  - R.generated.swift
   - AppFolder\ App/Class/*
  # - AppFolder\ App/ViewController/* //Enabled for this
 

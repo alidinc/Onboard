@@ -31,6 +31,7 @@
 		DA329101277052A2003545C9 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA329100277052A2003545C9 /* UIView+Extension.swift */; };
 		DA3291062771E549003545C9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3291052771E549003545C9 /* Constants.swift */; };
 		DA3291082771E70D003545C9 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3291072771E70D003545C9 /* R.generated.swift */; };
+		DA32910A2771FBF8003545C9 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3291092771FBF8003545C9 /* LandingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		DA329100277052A2003545C9 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		DA3291052771E549003545C9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DA3291072771E70D003545C9 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		DA3291092771FBF8003545C9 /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 		DA287034276CAB8A00A8B3E0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DA3291092771FBF8003545C9 /* LandingViewController.swift */,
 				DA0030CE276B7BA9001EDACB /* MainViewController.swift */,
 				DA287038276CAE4500A8B3E0 /* CountriesViewController.swift */,
 			);
@@ -359,6 +362,7 @@
 				DA3290FF27702D84003545C9 /* Flag.swift in Sources */,
 				DA3290FD2770225F003545C9 /* RCImageView.swift in Sources */,
 				DA3291082771E70D003545C9 /* R.generated.swift in Sources */,
+				DA32910A2771FBF8003545C9 /* LandingViewController.swift in Sources */,
 				DA3290F927701254003545C9 /* WebService.swift in Sources */,
 				DA3290F327701069003545C9 /* RCLabel.swift in Sources */,
 				DA0030CB276B7BA9001EDACB /* AppDelegate.swift in Sources */,

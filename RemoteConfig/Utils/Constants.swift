@@ -8,5 +8,5 @@
 import Foundation
 
 class Constants {
-    let rcButtonTitle = "Tap here to check out capitals ->"
+    let rcButtonTitle  = "Tap here to check out capitals ->"
 }

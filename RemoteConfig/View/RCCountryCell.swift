@@ -10,10 +10,10 @@ import UIKit
 class RCCountryCell: UICollectionViewCell {
     // MARK: - Properties
     static let reuseID = "countryCell"
-    let flagImageView = RCImageView(frame: .zero)
-    let countryLabel = RCLabel(textAlignment: .left, fontSize: 12, weight: .bold)
-    let capitalLabel = RCLabel(textAlignment: .left, fontSize: 10, weight: .medium)
-    let stackView: UIStackView = {
+    private let flagImageView = RCImageView(frame: .zero)
+    private let countryLabel = RCLabel(textAlignment: .left, fontSize: 12, weight: .bold)
+    private let capitalLabel = RCLabel(textAlignment: .left, fontSize: 10, weight: .medium)
+    private let stackView: UIStackView = {
         let stack = UIStackView()
         stack.alignment = .fill
         stack.distribution = .equalSpacing
@@ -22,7 +22,7 @@ class RCCountryCell: UICollectionViewCell {
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
-    let activityIndicator: UIActivityIndicatorView = {
+    private let activityIndicator: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView()
         indicator.hidesWhenStopped = true
         indicator.color = .white

@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SVGKit
 
 class WebService {
     // MARK: - Properties
@@ -61,9 +60,18 @@ class WebService {
             completion(nil)
             return
         }
-        guard let data = try? Data(contentsOf: url) else { return }
-        guard let receivedimage: SVGKImage = SVGKImage(data: data) else { return }
-        self.cache.setObject(receivedimage.uiImage, forKey: cacheKey)
-        completion(receivedimage.uiImage)
+        let task = URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
+            guard let self = self,
+                error == nil,
+                let response = response as? HTTPURLResponse, response.statusCode == 200,
+                let data = data,
+                let image = UIImage(data: data) else {
+                    completion(nil)
+                    return
+                }
+            self.cache.setObject(image, forKey: cacheKey)
+            completion(image)
+        }
+        task.resume()
     }
 }
