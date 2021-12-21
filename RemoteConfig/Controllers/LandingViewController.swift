@@ -102,13 +102,12 @@ class LandingViewController: UIViewController {
         let height = cgImage.height
 
         var buffer: CVPixelBuffer?
-        CVPixelBufferCreate(
-          kCFAllocatorDefault, width, height, kCVPixelFormatType_32BGRA, nil,
-          &buffer)
+        CVPixelBufferCreate(kCFAllocatorDefault, width, height, kCVPixelFormatType_32BGRA, nil, &buffer)
         guard let imageBuffer = buffer else { return nil }
 
         let flags = CVPixelBufferLockFlags(rawValue: 0)
         CVPixelBufferLockBaseAddress(imageBuffer, flags)
+
         let baseAddress = CVPixelBufferGetBaseAddress(imageBuffer)
         let colorSpace = CGColorSpaceCreateDeviceRGB()
         let bytesPerRow = CVPixelBufferGetBytesPerRow(imageBuffer)
