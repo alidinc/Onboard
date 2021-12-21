@@ -32,11 +32,13 @@ class LandingViewController: UIViewController {
     }()
     private let isCameraAvailable = UIImagePickerController.isCameraDeviceAvailable(.front) || UIImagePickerController.isCameraDeviceAvailable(.rear)
     private var mask: SegmentationMask!
+    private var segmenter: Segmenter!
 
     // MARK: - Initialize
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
+        setupSegmenter()
     }
     // MARK: - Methods
     private func configureView() {
@@ -57,17 +59,18 @@ class LandingViewController: UIViewController {
         ])
     }
 
-    private func configureSegmenter(for image: UIImage) {
+    private func setupSegmenter() {
         let options = SelfieSegmenterOptions()
         options.segmenterMode = .singleImage
         options.shouldEnableRawSizeMask = true
+        segmenter = Segmenter.segmenter(options: options)
+    }
 
-        let segmenter = Segmenter.segmenter(options: options)
+    private func maskSegmenterImage(for image: UIImage) {
         let image = VisionImage(image: image)
-
         DispatchQueue.global(qos: .background).async {
             do {
-                self.mask = try segmenter.results(in: image)
+                self.mask = try self.segmenter.results(in: image)
                 self.configureSegmentationMask(self.mask)
             } catch  {
               print("Failed to perform segmentation with error: \(error.localizedDescription).")
@@ -119,11 +122,11 @@ extension LandingViewController: UINavigationControllerDelegate, UIImagePickerCo
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let editedImage = info[.editedImage] as? UIImage {
             imageView.image = editedImage
-            self.configureSegmenter(for: editedImage)
+            self.maskSegmenterImage(for: editedImage)
 
         } else if let originalImage = info[.originalImage] as? UIImage {
             imageView.image = originalImage
-            self.configureSegmenter(for: originalImage)
+            self.maskSegmenterImage(for: originalImage)
         }
         self.dismiss(animated: true, completion: nil)
     }
