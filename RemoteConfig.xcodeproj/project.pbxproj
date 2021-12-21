@@ -32,6 +32,7 @@
 		DA3291062771E549003545C9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3291052771E549003545C9 /* Constants.swift */; };
 		DA3291082771E70D003545C9 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3291072771E70D003545C9 /* R.generated.swift */; };
 		DA32910A2771FBF8003545C9 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3291092771FBF8003545C9 /* LandingViewController.swift */; };
+		DA32910C2772032B003545C9 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA32910B2772032B003545C9 /* UIViewController+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		DA3291052771E549003545C9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DA3291072771E70D003545C9 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		DA3291092771FBF8003545C9 /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
+		DA32910B2772032B003545C9 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,8 +153,9 @@
 				DA3290FA277012A6003545C9 /* RCError.swift */,
 				DA0292C3276FED3300580401 /* UIHelper.swift */,
 				DA28702E276CAB2400A8B3E0 /* Bundle+Extension.swift */,
-				DA329100277052A2003545C9 /* UIView+Extension.swift */,
 				DA3291052771E549003545C9 /* Constants.swift */,
+				DA329100277052A2003545C9 /* UIView+Extension.swift */,
+				DA32910B2772032B003545C9 /* UIViewController+Extension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				DA28702F276CAB2400A8B3E0 /* Bundle+Extension.swift in Sources */,
 				DA3290FB277012A6003545C9 /* RCError.swift in Sources */,
 				DA28703C276CF5B400A8B3E0 /* Endpoint.swift in Sources */,
+				DA32910C2772032B003545C9 /* UIViewController+Extension.swift in Sources */,
 				DA287039276CAE4500A8B3E0 /* CountriesViewController.swift in Sources */,
 				DA3290FF27702D84003545C9 /* Flag.swift in Sources */,
 				DA3290FD2770225F003545C9 /* RCImageView.swift in Sources */,
