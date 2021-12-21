@@ -21,7 +21,7 @@ class WebService {
             print(error.localizedDescription)
         }
     }
-    func getFlag(with searchKey: String, completion: @escaping (Result<Flag, RCError>) -> Void) {
+    func getISO(with searchKey: String, completion: @escaping (Result<Flag, RCError>) -> Void) {
         let parameters = ["country": "\(searchKey)"]
         guard let url = URL(string: "https://countriesnow.space/api/v0.1/countries/flag/images") else { return }
         var request = URLRequest(url: url)

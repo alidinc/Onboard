@@ -9,6 +9,7 @@ target 'RemoteConfig' do
 pod ‘Firebase’
 pod ‘Firebase/Analytics’
 pod ‘Firebase/RemoteConfig’
+pod 'GoogleMLKit/SegmentationSelfie', '2.5.0'
 pod 'SwiftLint'
 pod 'R.swift'
 pod 'FlagKit'

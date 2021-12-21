@@ -68,7 +68,6 @@
 		DA32911427721916003545C9 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		DA3291152772194E003545C9 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		DA329119277219CC003545C9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		DA32911E27721E08003545C9 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +220,7 @@
 				DA0030C4276B7BA9001EDACB /* Frameworks */,
 				DA0030C5276B7BA9001EDACB /* Resources */,
 				2527E2E1F09D1F3825249B4E /* [CP] Embed Pods Frameworks */,
+				D14FEB0CE025982B91637DDD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -298,6 +298,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RemoteConfig/Pods-RemoteConfig-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D14FEB0CE025982B91637DDD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RemoteConfig/Pods-RemoteConfig-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RemoteConfig/Pods-RemoteConfig-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RemoteConfig/Pods-RemoteConfig-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DA3291022770E0FF003545C9 /* R.swift */ = {
@@ -406,7 +423,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				DA329119277219CC003545C9 /* en */,
-				DA32911E27721E08003545C9 /* tr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

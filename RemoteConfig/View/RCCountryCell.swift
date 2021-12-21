@@ -9,7 +9,7 @@ import UIKit
 
 class RCCountryCell: UICollectionViewCell {
     // MARK: - Properties
-    static let reuseID = "countryCell"
+    static let reuseID = R.string.localizable.countryCell()
     private let flagImageView = RCImageView(frame: .zero)
     private let countryLabel = RCLabel(textAlignment: .left, fontSize: 12, weight: .bold)
     private let capitalLabel = RCLabel(textAlignment: .left, fontSize: 10, weight: .medium)
@@ -61,10 +61,10 @@ class RCCountryCell: UICollectionViewCell {
         ])
     }
     private func setFlag(for country: Country) {
-        WebService.shared.getFlag(with: country.name) { [weak self] result in
+        WebService.shared.getISO(with: country.name) { [weak self] result in
             switch result {
             case .success(let result):
-                if let resultString = result.flag {
+                if let resultString = result.iso2 {
                    self?.downloadSVGImage(urlString: resultString)
                 }
             case .failure(let error):
