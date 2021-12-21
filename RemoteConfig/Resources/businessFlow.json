@@ -1,9 +1,0 @@
-{
-  "defaultProductIdentifierForBlurView": "trials.oneWeek",
-  "shouldBlurPremiumFilterResults": true,
-  "showSubscriptionScreenOnBoot": true,
-  "freeUsersCanUseFreeFilters": true,
-  "protectOrganics": true,
-  "shouldShowUserTrackingPermissionViewController": true,
-  "claytoonExecuteLimit": 5
-}

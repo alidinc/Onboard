@@ -11,15 +11,26 @@
 		DA0030CB276B7BA9001EDACB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0030CA276B7BA9001EDACB /* AppDelegate.swift */; };
 		DA0030CD276B7BA9001EDACB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0030CC276B7BA9001EDACB /* SceneDelegate.swift */; };
 		DA0030CF276B7BA9001EDACB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0030CE276B7BA9001EDACB /* MainViewController.swift */; };
-		DA0030D2276B7BA9001EDACB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA0030D0276B7BA9001EDACB /* Main.storyboard */; };
 		DA0030D4276B7BAA001EDACB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA0030D3276B7BAA001EDACB /* Assets.xcassets */; };
 		DA0030D7276B7BAA001EDACB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA0030D5276B7BAA001EDACB /* LaunchScreen.storyboard */; };
 		DA0030DF276B7CC6001EDACB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA0030DE276B7CC6001EDACB /* GoogleService-Info.plist */; };
 		DA0030E1276B903E001EDACB /* RemoteConfigService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0030E0276B903E001EDACB /* RemoteConfigService.swift */; };
-		DA28702D276CA01000A8B3E0 /* businessFlow.json in Resources */ = {isa = PBXBuildFile; fileRef = DA28702C276CA01000A8B3E0 /* businessFlow.json */; };
+		DA0292C4276FED3300580401 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0292C3276FED3300580401 /* UIHelper.swift */; };
+		DA0292C7276FF31C00580401 /* RCCountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0292C6276FF31C00580401 /* RCCountryCell.swift */; };
+		DA28702D276CA01000A8B3E0 /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = DA28702C276CA01000A8B3E0 /* countries.json */; };
 		DA28702F276CAB2400A8B3E0 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28702E276CAB2400A8B3E0 /* Bundle+Extension.swift */; };
-		DA287037276CABE600A8B3E0 /* BusinessFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA287036276CABE600A8B3E0 /* BusinessFlow.swift */; };
-		DA287039276CAE4500A8B3E0 /* BusinessFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA287038276CAE4500A8B3E0 /* BusinessFlowViewController.swift */; };
+		DA287037276CABE600A8B3E0 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA287036276CABE600A8B3E0 /* Country.swift */; };
+		DA287039276CAE4500A8B3E0 /* CountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA287038276CAE4500A8B3E0 /* CountriesViewController.swift */; };
+		DA28703C276CF5B400A8B3E0 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28703B276CF5B400A8B3E0 /* Endpoint.swift */; };
+		DA3290F327701069003545C9 /* RCLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3290F227701069003545C9 /* RCLabel.swift */; };
+		DA3290F72770122D003545C9 /* flags.json in Resources */ = {isa = PBXBuildFile; fileRef = DA3290F62770122D003545C9 /* flags.json */; };
+		DA3290F927701254003545C9 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3290F827701254003545C9 /* WebService.swift */; };
+		DA3290FB277012A6003545C9 /* RCError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3290FA277012A6003545C9 /* RCError.swift */; };
+		DA3290FD2770225F003545C9 /* RCImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3290FC2770225F003545C9 /* RCImageView.swift */; };
+		DA3290FF27702D84003545C9 /* Flag.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3290FE27702D84003545C9 /* Flag.swift */; };
+		DA329101277052A2003545C9 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA329100277052A2003545C9 /* UIView+Extension.swift */; };
+		DA3291062771E549003545C9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3291052771E549003545C9 /* Constants.swift */; };
+		DA3291082771E70D003545C9 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3291072771E70D003545C9 /* R.generated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,16 +41,27 @@
 		DA0030CA276B7BA9001EDACB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA0030CC276B7BA9001EDACB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DA0030CE276B7BA9001EDACB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		DA0030D1276B7BA9001EDACB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DA0030D3276B7BAA001EDACB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA0030D6276B7BAA001EDACB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA0030D8276B7BAA001EDACB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA0030DE276B7CC6001EDACB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DA0030E0276B903E001EDACB /* RemoteConfigService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigService.swift; sourceTree = "<group>"; };
-		DA28702C276CA01000A8B3E0 /* businessFlow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = businessFlow.json; sourceTree = "<group>"; };
+		DA0292C3276FED3300580401 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
+		DA0292C6276FF31C00580401 /* RCCountryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCCountryCell.swift; sourceTree = "<group>"; };
+		DA28702C276CA01000A8B3E0 /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
 		DA28702E276CAB2400A8B3E0 /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
-		DA287036276CABE600A8B3E0 /* BusinessFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessFlow.swift; sourceTree = "<group>"; };
-		DA287038276CAE4500A8B3E0 /* BusinessFlowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessFlowViewController.swift; sourceTree = "<group>"; };
+		DA287036276CABE600A8B3E0 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		DA287038276CAE4500A8B3E0 /* CountriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewController.swift; sourceTree = "<group>"; };
+		DA28703B276CF5B400A8B3E0 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		DA3290F227701069003545C9 /* RCLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCLabel.swift; sourceTree = "<group>"; };
+		DA3290F62770122D003545C9 /* flags.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = flags.json; sourceTree = "<group>"; };
+		DA3290F827701254003545C9 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		DA3290FA277012A6003545C9 /* RCError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCError.swift; sourceTree = "<group>"; };
+		DA3290FC2770225F003545C9 /* RCImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCImageView.swift; sourceTree = "<group>"; };
+		DA3290FE27702D84003545C9 /* Flag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flag.swift; sourceTree = "<group>"; };
+		DA329100277052A2003545C9 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		DA3291052771E549003545C9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DA3291072771E70D003545C9 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,13 +98,23 @@
 			isa = PBXGroup;
 			children = (
 				DA287035276CABD500A8B3E0 /* Models */,
+				DA0292C5276FF30600580401 /* View */,
 				DA287034276CAB8A00A8B3E0 /* Controllers */,
-				DA287033276CAB8400A8B3E0 /* Utils */,
 				DA287032276CAB7E00A8B3E0 /* Services */,
-				DA287031276CAB6A00A8B3E0 /* Storyboards */,
+				DA287033276CAB8400A8B3E0 /* Utils */,
 				DA287030276CAB3400A8B3E0 /* Resources */,
 			);
 			path = RemoteConfig;
+			sourceTree = "<group>";
+		};
+		DA0292C5276FF30600580401 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DA3290F227701069003545C9 /* RCLabel.swift */,
+				DA3290FC2770225F003545C9 /* RCImageView.swift */,
+				DA0292C6276FF31C00580401 /* RCCountryCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		DA287030276CAB3400A8B3E0 /* Resources */ = {
@@ -90,26 +122,21 @@
 			children = (
 				DA0030CA276B7BA9001EDACB /* AppDelegate.swift */,
 				DA0030CC276B7BA9001EDACB /* SceneDelegate.swift */,
-				DA28702C276CA01000A8B3E0 /* businessFlow.json */,
+				DA3290F62770122D003545C9 /* flags.json */,
+				DA28702C276CA01000A8B3E0 /* countries.json */,
+				DA0030D5276B7BAA001EDACB /* LaunchScreen.storyboard */,
 				DA0030D3276B7BAA001EDACB /* Assets.xcassets */,
+				DA3291072771E70D003545C9 /* R.generated.swift */,
 				DA0030DE276B7CC6001EDACB /* GoogleService-Info.plist */,
 				DA0030D8276B7BAA001EDACB /* Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		DA287031276CAB6A00A8B3E0 /* Storyboards */ = {
-			isa = PBXGroup;
-			children = (
-				DA0030D0276B7BA9001EDACB /* Main.storyboard */,
-				DA0030D5276B7BAA001EDACB /* LaunchScreen.storyboard */,
-			);
-			path = Storyboards;
-			sourceTree = "<group>";
-		};
 		DA287032276CAB7E00A8B3E0 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				DA3290F827701254003545C9 /* WebService.swift */,
 				DA0030E0276B903E001EDACB /* RemoteConfigService.swift */,
 			);
 			path = Services;
@@ -118,7 +145,12 @@
 		DA287033276CAB8400A8B3E0 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				DA28703B276CF5B400A8B3E0 /* Endpoint.swift */,
+				DA3290FA277012A6003545C9 /* RCError.swift */,
+				DA0292C3276FED3300580401 /* UIHelper.swift */,
 				DA28702E276CAB2400A8B3E0 /* Bundle+Extension.swift */,
+				DA329100277052A2003545C9 /* UIView+Extension.swift */,
+				DA3291052771E549003545C9 /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -127,7 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				DA0030CE276B7BA9001EDACB /* MainViewController.swift */,
-				DA287038276CAE4500A8B3E0 /* BusinessFlowViewController.swift */,
+				DA287038276CAE4500A8B3E0 /* CountriesViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -135,7 +167,8 @@
 		DA287035276CABD500A8B3E0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				DA287036276CABE600A8B3E0 /* BusinessFlow.swift */,
+				DA287036276CABE600A8B3E0 /* Country.swift */,
+				DA3290FE27702D84003545C9 /* Flag.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -165,6 +198,8 @@
 			buildConfigurationList = DA0030DB276B7BAA001EDACB /* Build configuration list for PBXNativeTarget "RemoteConfig" */;
 			buildPhases = (
 				E48CC7938C261ED83A76BAB7 /* [CP] Check Pods Manifest.lock */,
+				DA3291022770E0FF003545C9 /* R.swift */,
+				DA3291042771D6EE003545C9 /* SwiftLint */,
 				DA0030C3276B7BA9001EDACB /* Sources */,
 				DA0030C4276B7BA9001EDACB /* Frameworks */,
 				DA0030C5276B7BA9001EDACB /* Resources */,
@@ -219,9 +254,9 @@
 			files = (
 				DA0030D7276B7BAA001EDACB /* LaunchScreen.storyboard in Resources */,
 				DA0030DF276B7CC6001EDACB /* GoogleService-Info.plist in Resources */,
-				DA28702D276CA01000A8B3E0 /* businessFlow.json in Resources */,
+				DA28702D276CA01000A8B3E0 /* countries.json in Resources */,
 				DA0030D4276B7BAA001EDACB /* Assets.xcassets in Resources */,
-				DA0030D2276B7BA9001EDACB /* Main.storyboard in Resources */,
+				DA3290F72770122D003545C9 /* flags.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,6 +279,44 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RemoteConfig/Pods-RemoteConfig-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		DA3291022770E0FF003545C9 /* R.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = R.swift;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
+		DA3291042771D6EE003545C9 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
 		};
 		E48CC7938C261ED83A76BAB7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -274,11 +347,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA0292C4276FED3300580401 /* UIHelper.swift in Sources */,
+				DA3291062771E549003545C9 /* Constants.swift in Sources */,
+				DA0292C7276FF31C00580401 /* RCCountryCell.swift in Sources */,
+				DA329101277052A2003545C9 /* UIView+Extension.swift in Sources */,
 				DA0030CF276B7BA9001EDACB /* MainViewController.swift in Sources */,
 				DA28702F276CAB2400A8B3E0 /* Bundle+Extension.swift in Sources */,
-				DA287039276CAE4500A8B3E0 /* BusinessFlowViewController.swift in Sources */,
+				DA3290FB277012A6003545C9 /* RCError.swift in Sources */,
+				DA28703C276CF5B400A8B3E0 /* Endpoint.swift in Sources */,
+				DA287039276CAE4500A8B3E0 /* CountriesViewController.swift in Sources */,
+				DA3290FF27702D84003545C9 /* Flag.swift in Sources */,
+				DA3290FD2770225F003545C9 /* RCImageView.swift in Sources */,
+				DA3291082771E70D003545C9 /* R.generated.swift in Sources */,
+				DA3290F927701254003545C9 /* WebService.swift in Sources */,
+				DA3290F327701069003545C9 /* RCLabel.swift in Sources */,
 				DA0030CB276B7BA9001EDACB /* AppDelegate.swift in Sources */,
-				DA287037276CABE600A8B3E0 /* BusinessFlow.swift in Sources */,
+				DA287037276CABE600A8B3E0 /* Country.swift in Sources */,
 				DA0030CD276B7BA9001EDACB /* SceneDelegate.swift in Sources */,
 				DA0030E1276B903E001EDACB /* RemoteConfigService.swift in Sources */,
 			);
@@ -287,14 +371,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		DA0030D0276B7BA9001EDACB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DA0030D1276B7BA9001EDACB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		DA0030D5276B7BAA001EDACB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -428,6 +504,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RemoteConfig/RemoteConfig.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GD7GT762TS;
@@ -435,7 +512,6 @@
 				INFOPLIST_FILE = RemoteConfig/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -457,6 +533,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RemoteConfig/RemoteConfig.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GD7GT762TS;
@@ -464,7 +541,6 @@
 				INFOPLIST_FILE = RemoteConfig/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

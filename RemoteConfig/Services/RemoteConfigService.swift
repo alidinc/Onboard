@@ -9,45 +9,37 @@ import Foundation
 import Firebase
 
 enum ValueKey: String {
-    case label_text
+    case labelText
     case boolCheck
-    case number_value
-    case businessFlow
-    
+    case numberValue
+    case geoData
 }
 
 class RemoteConfigService {
-    
     // MARK: - Properties
-    var rc = RemoteConfig.remoteConfig()
-    var fetchComplete = false
-    var loadingDoneCallback: (() -> Void)?
+    var remoteConfig = RemoteConfig.remoteConfig()
     static let shared = RemoteConfigService()
-    
-    
     // MARK: - Methods
     func fetchRemoteConfig(completion: @escaping () -> Void) {
-        rc.fetch(withExpirationDuration: 0) { [unowned self] (status, error) in
+        remoteConfig.fetch(withExpirationDuration: 0) { [weak self] (_, error) in
             guard error == nil else { return }
             print("Got the value from Remote Config!")
-            rc.activate()
+            self?.remoteConfig.activate()
             completion()
         }
     }
-    
     func setDefaultsForRC(with defaults: [String: Any?]) {
-        self.rc.setDefaults(defaults as? [String: NSObject])
+        self.remoteConfig.setDefaults(defaults as? [String: NSObject])
     }
-    
     func bool(forKey key: ValueKey) -> Bool {
-      self.rc[key.rawValue].boolValue
+      self.remoteConfig[key.rawValue].boolValue
     }
 
     func string(forKey key: ValueKey) -> String {
-      self.rc[key.rawValue].stringValue ?? ""
+      self.remoteConfig[key.rawValue].stringValue ?? ""
     }
 
     func int(forKey key: ValueKey) -> Int {
-      self.rc[key.rawValue].numberValue.intValue
+      self.remoteConfig[key.rawValue].numberValue.intValue
     }
 }
