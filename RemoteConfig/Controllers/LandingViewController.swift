@@ -65,13 +65,14 @@ class LandingViewController: UIViewController {
         let segmenter = Segmenter.segmenter(options: options)
         let image = VisionImage(image: image)
 
-        do {
-          mask = try segmenter.results(in: image)
-          configureSegmentationMask(mask)
-        } catch  {
-          print("Failed to perform segmentation with error: \(error.localizedDescription).")
+        DispatchQueue.global(qos: .background).async {
+            do {
+                self.mask = try segmenter.results(in: image)
+                self.configureSegmentationMask(self.mask)
+            } catch  {
+              print("Failed to perform segmentation with error: \(error.localizedDescription).")
+            }
         }
-
     }
 
     private func configureSegmentationMask(_ mask: SegmentationMask) {
@@ -82,11 +83,11 @@ class LandingViewController: UIViewController {
         let maskBytesPerRow = CVPixelBufferGetBytesPerRow(mask.buffer)
         var maskAddress = CVPixelBufferGetBaseAddress(mask.buffer)!.bindMemory(
             to: Float32.self, capacity: maskBytesPerRow * maskHeight)
-        
+
         for _ in 0...(maskHeight - 1) {
           for col in 0...(maskWidth - 1) {
             // Gets the confidence of the pixel in the mask being in the foreground.
-              let _: Float32 = maskAddress[col]
+              let foregroundConfidence: Float32 = maskAddress[col]
           }
           maskAddress += maskBytesPerRow / MemoryLayout<Float32>.size
         }
