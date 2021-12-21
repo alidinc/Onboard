@@ -84,7 +84,7 @@ fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
 
-R.generated.swift
+*.generated.swift
 
 # Code Injection
 #
