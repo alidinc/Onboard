@@ -10,6 +10,7 @@ import UIKit
 class WebService {
     // MARK: - Properties
     static let shared = WebService()
+    private init() {}
     let cache = NSCache<NSString, UIImage>()
     // MARK: - Methods
     func showNetworkResponse(data : Data){

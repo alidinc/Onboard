@@ -114,8 +114,7 @@ class LandingViewController: UIViewController {
         let context = CGContext(
           data: baseAddress, width: width, height: height, bitsPerComponent: 8,
           bytesPerRow: bytesPerRow, space: colorSpace,
-          bitmapInfo: (CGImageAlphaInfo.premultipliedFirst.rawValue
-            | CGBitmapInfo.byteOrder32Little.rawValue))
+          bitmapInfo: (CGImageAlphaInfo.premultipliedFirst.rawValue | CGBitmapInfo.byteOrder32Little.rawValue))
 
         if let context = context {
           let rect = CGRect.init(x: 0, y: 0, width: width, height: height)
@@ -128,30 +127,21 @@ class LandingViewController: UIViewController {
         }
       }
 
-    private func applySegmentationMask(
-        mask: SegmentationMask, to imageBuffer: CVImageBuffer,
-        backgroundColor: UIColor?, foregroundColor: UIColor?
-    ) {
-
+    private func applySegmentationMask(mask: SegmentationMask, to imageBuffer: CVImageBuffer, backgroundColor: UIColor?, foregroundColor: UIColor?) {
         let width = CVPixelBufferGetWidth(mask.buffer)
         let height = CVPixelBufferGetHeight(mask.buffer)
 
-        if backgroundColor == nil && foregroundColor == nil {
-            return
-        }
+        if backgroundColor == nil && foregroundColor == nil { return }
 
         let writeFlags = CVPixelBufferLockFlags(rawValue: 0)
         CVPixelBufferLockBaseAddress(imageBuffer, writeFlags)
         CVPixelBufferLockBaseAddress(mask.buffer, CVPixelBufferLockFlags.readOnly)
 
         let maskBytesPerRow = CVPixelBufferGetBytesPerRow(mask.buffer)
-        var maskAddress =
-        CVPixelBufferGetBaseAddress(mask.buffer)!.bindMemory(
-            to: Float32.self, capacity: maskBytesPerRow * height)
+        var maskAddress = CVPixelBufferGetBaseAddress(mask.buffer)!.bindMemory(to: Float32.self, capacity: maskBytesPerRow * height)
 
         let imageBytesPerRow = CVPixelBufferGetBytesPerRow(imageBuffer)
-        var imageAddress = CVPixelBufferGetBaseAddress(imageBuffer)!.bindMemory(
-            to: UInt8.self, capacity: imageBytesPerRow * height)
+        var imageAddress = CVPixelBufferGetBaseAddress(imageBuffer)!.bindMemory(to: UInt8.self, capacity: imageBytesPerRow * height)
 
         var redFG: CGFloat = 0.0
         var greenFG: CGFloat = 0.0

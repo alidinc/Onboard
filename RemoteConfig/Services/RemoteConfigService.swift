@@ -19,6 +19,7 @@ class RemoteConfigService {
     // MARK: - Properties
     var remoteConfig = RemoteConfig.remoteConfig()
     static let shared = RemoteConfigService()
+    private init() {}
     // MARK: - Methods
     func fetchRemoteConfig(completion: @escaping () -> Void) {
         remoteConfig.fetch(withExpirationDuration: 0) { [weak self] (_, error) in
