@@ -12,7 +12,7 @@ class RCLabel: UILabel {
     // MARK: - Initialize
     override init(frame: CGRect) {
         super.init(frame: frame)
-        configure()
+        setupView()
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -21,15 +21,15 @@ class RCLabel: UILabel {
         super.init(frame: .zero)
         self.textAlignment = textAlignment
         self.font = UIFont.systemFont(ofSize: fontSize, weight: weight)
-        configure()
+        setupView()
     }
     // MARK: - Methods
-    private func configure() {
-        textColor                                 = UIColor.label
-        adjustsFontSizeToFitWidth                 = true
-        minimumScaleFactor                        = 0.9
-        lineBreakMode                             = NSLineBreakMode.byTruncatingTail
-        numberOfLines                             = .zero
+    private func setupView() {
+        textColor = UIColor.label
+        adjustsFontSizeToFitWidth = true
+        minimumScaleFactor = 0.9
+        lineBreakMode = NSLineBreakMode.byTruncatingTail
+        numberOfLines = .zero
         translatesAutoresizingMaskIntoConstraints = false
     }
 }

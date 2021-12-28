@@ -11,9 +11,9 @@ class WebService {
     // MARK: - Properties
     static let shared = WebService()
     private init() {}
-    let cache = NSCache<NSString, UIImage>()
+    private let cache = NSCache<NSString, UIImage>()
     // MARK: - Methods
-    func showNetworkResponse(data : Data){
+    private func showNetworkResponse(data : Data){
         do {
             if let jsonResult = try JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary {
                 print(jsonResult)
@@ -42,7 +42,7 @@ class WebService {
                 self.showNetworkResponse(data: data)
                 do {
                     let decoder = JSONDecoder()
-                    guard let jsonResponse = try decoder.decode(FlagData.self, from: data).data else { return }
+                    let jsonResponse = try decoder.decode(Flag.self, from: data)
                     completion(.success(jsonResponse))
                 } catch {
                     print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")

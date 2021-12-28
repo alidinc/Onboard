@@ -17,7 +17,7 @@ enum ValueKey: String {
 
 class RemoteConfigService {
     // MARK: - Properties
-    var remoteConfig = RemoteConfig.remoteConfig()
+    private let remoteConfig = RemoteConfig.remoteConfig()
     static let shared = RemoteConfigService()
     private init() {}
     // MARK: - Methods

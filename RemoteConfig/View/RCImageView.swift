@@ -15,17 +15,17 @@ class RCImageView: UIImageView {
     // MARK: - Initialize
     override init(frame: CGRect) {
         super.init(frame: frame)
-        configure()
+        setupView()
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     // MARK: - Methods
-    private func configure() {
-        layer.cornerRadius                        = 22
-        contentMode                               = .scaleAspectFit
-        clipsToBounds                             = true
-        image                                     = placeholderImage
+    private func setupView() {
+        layer.cornerRadius = 22
+        contentMode = .scaleAspectFit
+        clipsToBounds = true
+        image = placeholderImage
         translatesAutoresizingMaskIntoConstraints = false
     }
 }

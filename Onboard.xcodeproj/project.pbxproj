@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		79CF85A23E321FA9E405F57D /* Pods_RemoteConfig.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A5D5DDC206FF0AF0141ADD /* Pods_RemoteConfig.framework */; };
+		D246F31FD694A12E0F115271 /* Pods_Onboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8C11161891027450CD6E4DC /* Pods_Onboard.framework */; };
 		DA0030CB276B7BA9001EDACB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0030CA276B7BA9001EDACB /* AppDelegate.swift */; };
 		DA0030CD276B7BA9001EDACB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0030CC276B7BA9001EDACB /* SceneDelegate.swift */; };
 		DA0030CF276B7BA9001EDACB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0030CE276B7BA9001EDACB /* MainViewController.swift */; };
@@ -17,6 +17,7 @@
 		DA0030E1276B903E001EDACB /* RemoteConfigService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0030E0276B903E001EDACB /* RemoteConfigService.swift */; };
 		DA0292C4276FED3300580401 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0292C3276FED3300580401 /* UIHelper.swift */; };
 		DA0292C7276FF31C00580401 /* RCCountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0292C6276FF31C00580401 /* RCCountryCell.swift */; };
+		DA03B920277B39AC003537EF /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA03B91F277B39AC003537EF /* ViewModel.swift */; };
 		DA28702D276CA01000A8B3E0 /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = DA28702C276CA01000A8B3E0 /* countries.json */; };
 		DA28702F276CAB2400A8B3E0 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28702E276CAB2400A8B3E0 /* Bundle+Extension.swift */; };
 		DA287037276CABE600A8B3E0 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA287036276CABE600A8B3E0 /* Country.swift */; };
@@ -37,9 +38,10 @@
 
 /* Begin PBXFileReference section */
 		0A535B600A8D3EFF0C044638 /* Pods-RemoteConfig.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemoteConfig.debug.xcconfig"; path = "Target Support Files/Pods-RemoteConfig/Pods-RemoteConfig.debug.xcconfig"; sourceTree = "<group>"; };
-		42A5D5DDC206FF0AF0141ADD /* Pods_RemoteConfig.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RemoteConfig.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F4A27E44350DAFD3CF62FA9 /* Pods-Onboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Onboard.release.xcconfig"; path = "Target Support Files/Pods-Onboard/Pods-Onboard.release.xcconfig"; sourceTree = "<group>"; };
 		A8E9230A60D435F59D751930 /* Pods-RemoteConfig.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemoteConfig.release.xcconfig"; path = "Target Support Files/Pods-RemoteConfig/Pods-RemoteConfig.release.xcconfig"; sourceTree = "<group>"; };
-		DA0030C7276B7BA9001EDACB /* RemoteConfig.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemoteConfig.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C11161891027450CD6E4DC /* Pods_Onboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Onboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA0030C7276B7BA9001EDACB /* Onboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Onboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA0030CA276B7BA9001EDACB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA0030CC276B7BA9001EDACB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DA0030CE276B7BA9001EDACB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -50,6 +52,7 @@
 		DA0030E0276B903E001EDACB /* RemoteConfigService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigService.swift; sourceTree = "<group>"; };
 		DA0292C3276FED3300580401 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		DA0292C6276FF31C00580401 /* RCCountryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCCountryCell.swift; sourceTree = "<group>"; };
+		DA03B91F277B39AC003537EF /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		DA28702C276CA01000A8B3E0 /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
 		DA28702E276CAB2400A8B3E0 /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		DA287036276CABE600A8B3E0 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
@@ -68,6 +71,7 @@
 		DA32911427721916003545C9 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		DA3291152772194E003545C9 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		DA329119277219CC003545C9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E9A0A0907B1C624293FEB598 /* Pods-Onboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Onboard.debug.xcconfig"; path = "Target Support Files/Pods-Onboard/Pods-Onboard.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79CF85A23E321FA9E405F57D /* Pods_RemoteConfig.framework in Frameworks */,
+				D246F31FD694A12E0F115271 /* Pods_Onboard.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,7 +99,7 @@
 		DA0030C8276B7BA9001EDACB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DA0030C7276B7BA9001EDACB /* RemoteConfig.app */,
+				DA0030C7276B7BA9001EDACB /* Onboard.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -103,6 +107,7 @@
 		DA0030C9276B7BA9001EDACB /* RemoteConfig */ = {
 			isa = PBXGroup;
 			children = (
+				DA03B91E277B3996003537EF /* ViewModels */,
 				DA287035276CABD500A8B3E0 /* Models */,
 				DA0292C5276FF30600580401 /* View */,
 				DA287034276CAB8A00A8B3E0 /* Controllers */,
@@ -121,6 +126,14 @@
 				DA0292C6276FF31C00580401 /* RCCountryCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		DA03B91E277B3996003537EF /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				DA03B91F277B39AC003537EF /* ViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		DA287030276CAB3400A8B3E0 /* Resources */ = {
@@ -194,6 +207,8 @@
 			children = (
 				0A535B600A8D3EFF0C044638 /* Pods-RemoteConfig.debug.xcconfig */,
 				A8E9230A60D435F59D751930 /* Pods-RemoteConfig.release.xcconfig */,
+				E9A0A0907B1C624293FEB598 /* Pods-Onboard.debug.xcconfig */,
+				3F4A27E44350DAFD3CF62FA9 /* Pods-Onboard.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -201,7 +216,7 @@
 		E756720C5996B631C6859070 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				42A5D5DDC206FF0AF0141ADD /* Pods_RemoteConfig.framework */,
+				C8C11161891027450CD6E4DC /* Pods_Onboard.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -209,9 +224,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DA0030C6276B7BA9001EDACB /* RemoteConfig */ = {
+		DA0030C6276B7BA9001EDACB /* Onboard */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DA0030DB276B7BAA001EDACB /* Build configuration list for PBXNativeTarget "RemoteConfig" */;
+			buildConfigurationList = DA0030DB276B7BAA001EDACB /* Build configuration list for PBXNativeTarget "Onboard" */;
 			buildPhases = (
 				E48CC7938C261ED83A76BAB7 /* [CP] Check Pods Manifest.lock */,
 				DA3291022770E0FF003545C9 /* R.swift */,
@@ -226,9 +241,9 @@
 			);
 			dependencies = (
 			);
-			name = RemoteConfig;
+			name = Onboard;
 			productName = RemoteConfig;
-			productReference = DA0030C7276B7BA9001EDACB /* RemoteConfig.app */;
+			productReference = DA0030C7276B7BA9001EDACB /* Onboard.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -246,7 +261,7 @@
 					};
 				};
 			};
-			buildConfigurationList = DA0030C2276B7BA9001EDACB /* Build configuration list for PBXProject "RemoteConfig" */;
+			buildConfigurationList = DA0030C2276B7BA9001EDACB /* Build configuration list for PBXProject "Onboard" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -261,7 +276,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DA0030C6276B7BA9001EDACB /* RemoteConfig */,
+				DA0030C6276B7BA9001EDACB /* Onboard */,
 			);
 		};
 /* End PBXProject section */
@@ -289,15 +304,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RemoteConfig/Pods-RemoteConfig-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Onboard/Pods-Onboard-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RemoteConfig/Pods-RemoteConfig-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Onboard/Pods-Onboard-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RemoteConfig/Pods-RemoteConfig-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Onboard/Pods-Onboard-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D14FEB0CE025982B91637DDD /* [CP] Copy Pods Resources */ = {
@@ -306,15 +321,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RemoteConfig/Pods-RemoteConfig-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Onboard/Pods-Onboard-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RemoteConfig/Pods-RemoteConfig-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Onboard/Pods-Onboard-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RemoteConfig/Pods-RemoteConfig-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Onboard/Pods-Onboard-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DA3291022770E0FF003545C9 /* R.swift */ = {
@@ -331,7 +346,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				$SRCROOT/R.generated.swift,
+				"$SRCROOT/R.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -370,7 +385,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RemoteConfig-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Onboard-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -394,6 +409,7 @@
 				DA32910C2772032B003545C9 /* UIViewController+Extension.swift in Sources */,
 				DA287039276CAE4500A8B3E0 /* CountriesViewController.swift in Sources */,
 				DA3290FF27702D84003545C9 /* Flag.swift in Sources */,
+				DA03B920277B39AC003537EF /* ViewModel.swift in Sources */,
 				DA3290FD2770225F003545C9 /* RCImageView.swift in Sources */,
 				DA3291082771E70D003545C9 /* R.generated.swift in Sources */,
 				DA32910A2771FBF8003545C9 /* LandingViewController.swift in Sources */,
@@ -550,7 +566,7 @@
 		};
 		DA0030DC276B7BAA001EDACB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0A535B600A8D3EFF0C044638 /* Pods-RemoteConfig.debug.xcconfig */;
+			baseConfigurationReference = E9A0A0907B1C624293FEB598 /* Pods-Onboard.debug.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -583,7 +599,7 @@
 		};
 		DA0030DD276B7BAA001EDACB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A8E9230A60D435F59D751930 /* Pods-RemoteConfig.release.xcconfig */;
+			baseConfigurationReference = 3F4A27E44350DAFD3CF62FA9 /* Pods-Onboard.release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -618,7 +634,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DA0030C2276B7BA9001EDACB /* Build configuration list for PBXProject "RemoteConfig" */ = {
+		DA0030C2276B7BA9001EDACB /* Build configuration list for PBXProject "Onboard" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DA0030D9276B7BAA001EDACB /* Debug */,
@@ -627,7 +643,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DA0030DB276B7BAA001EDACB /* Build configuration list for PBXNativeTarget "RemoteConfig" */ = {
+		DA0030DB276B7BAA001EDACB /* Build configuration list for PBXNativeTarget "Onboard" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DA0030DC276B7BAA001EDACB /* Debug */,

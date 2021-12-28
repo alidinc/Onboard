@@ -1,7 +1,7 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
-target 'RemoteConfig' do
+target 'Onboard' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
@@ -13,7 +13,8 @@ pod 'GoogleMLKit/SegmentationSelfie', '2.5.0'
 pod 'SwiftLint'
 pod 'R.swift'
 pod 'FlagKit'
-
+pod 'SnapKit', '~> 5.0.0'
+pod 'SevenAppsKit/UI'
 
 post_install do |installer|
     installer.pods_project.targets.each do |target|

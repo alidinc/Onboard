@@ -7,12 +7,6 @@
 
 import Foundation
 
-struct FlagData: Codable {
-    let error: Bool
-    let msg: String
-    let data: Flag?
-}
-
 // MARK: - DataClass
 struct Flag: Codable {
     let name: String?

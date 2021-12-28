@@ -8,6 +8,7 @@
 import Foundation
 import MLKit
 import MLKitSegmentationSelfie
+import SnapKit
 import UIKit
 
 class LandingViewController: UIViewController {
@@ -37,26 +38,30 @@ class LandingViewController: UIViewController {
     // MARK: - Initialize
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureView()
+        setupView()
         setupSegmenter()
     }
     // MARK: - Methods
-    private func configureView() {
+    private func setupView() {
         view.backgroundColor = .lightGray
         view.addSubview(imageView)
         view.addSubview(captureButton)
         view.addSubview(pickFromLibraryButton)
         let padding: CGFloat = 20
-        NSLayoutConstraint.activate([
-            imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: padding),
-            imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
-            imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
-            imageView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.2),
-            captureButton.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: padding),
-            captureButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
-            pickFromLibraryButton.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: padding),
-            pickFromLibraryButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding)
-        ])
+
+        imageView.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(padding)
+            make.leading.trailing.equalToSuperview().offset(padding)
+            make.height.equalToSuperview().multipliedBy(0.2)
+        }
+        captureButton.snp.makeConstraints { make in
+            make.top.equalTo(imageView.snp_bottomMargin).offset(padding)
+            make.leading.equalToSuperview().offset(padding)
+        }
+        pickFromLibraryButton.snp.makeConstraints { make in
+            make.top.equalTo(imageView.snp_bottomMargin).offset(padding)
+            make.trailing.equalToSuperview().offset(padding)
+        }
     }
 
     private func setupSegmenter() {
@@ -231,10 +236,10 @@ extension LandingViewController: UINavigationControllerDelegate, UIImagePickerCo
 
     private func setImagePickerSource(_ imagePicker: UIImagePickerController, for sender: UIButton) {
         if sender.tag == 0 && isCameraAvailable {
-            imagePicker.sourceType          = .camera
+            imagePicker.sourceType = .camera
             imagePicker.showsCameraControls = true
         } else if sender.tag == 1 && UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-            imagePicker.sourceType          = .photoLibrary
+            imagePicker.sourceType = .photoLibrary
         } else {
             self.presentAlert(title: "Not available", message: "Please check your camera or photo library settings.", buttonTitle: "OK")
         }

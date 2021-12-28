@@ -29,6 +29,11 @@ class CountriesViewController: UIViewController {
         fetchDataFromRemoteConfig()
         configureDataSource()
     }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        updateDataWithSnapshot(on: countries)
+    }
     // MARK: - Methods
     private func setupView() {
         view.addSubview(collectionView)
@@ -37,7 +42,6 @@ class CountriesViewController: UIViewController {
         self.countries = RemoteConfigService.shared.jsonValue(
             forKey: ValueKey.geoData,
             expecting: GeoData.self).data
-        updateDataWithSnapshot(on: countries)
     }
 }
 
@@ -58,8 +62,6 @@ extension CountriesViewController {
         var snapshot = NSDiffableDataSourceSnapshot<Section, Country>()
         snapshot.appendSections([.main])
         snapshot.appendItems(countries)
-        DispatchQueue.main.async {
-            self.dataSource.apply(snapshot, animatingDifferences: true)
-        }
+        self.dataSource.apply(snapshot, animatingDifferences: true)
     }
 }
