@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  RemoteConfig
+
+  Created by Ali Dinç on 21/12/2021.
+  
+*/
+
+"Capture Photo" = "Capture Photo";
+"Pick From Library" = "Pick From Library";
+"Tap here to see capitals ->" = "Tap here to see capitals ->";
+"countryCell" = "countryCell";
