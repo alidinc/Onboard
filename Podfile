@@ -13,7 +13,6 @@ pod 'GoogleMLKit/SegmentationSelfie', '2.5.0'
 pod 'SwiftLint'
 pod 'R.swift'
 pod 'FlagKit'
-<<<<<<< HEAD
 pod 'SnapKit', '~> 5.0.0'
 
 # Core
@@ -28,9 +27,6 @@ pod 'SnapKit', '~> 5.0.0'
   pod 'SevenAppsKit/AnalyticsMixpanel', :path => './SevenAppsKit'
   pod 'SevenAppsKit/AnalyticsAdapty', :path => './SevenAppsKit'
   pod 'SevenAppsKit/AnalyticsFacebook', :path => './SevenAppsKit'
-=======
->>>>>>> cd08546e009a05615e4d0f1156c2ed05b9bc0d10
-
 
 post_install do |installer|
     installer.pods_project.targets.each do |target|
