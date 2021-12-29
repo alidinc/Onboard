@@ -53,16 +53,6 @@ class RCCountryCell: UICollectionViewCell {
             make.top.equalTo(flagImageView.snp_bottomMargin).offset(padding)
             make.leading.trailing.equalToSuperview().offset(padding)
         }
-//        NSLayoutConstraint.activate([
-//            flagImageView.topAnchor.constraint(equalTo: topAnchor),
-//            flagImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
-//            flagImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
-//            flagImageView.heightAnchor.constraint(equalToConstant: 60),
-//
-//            stackView.topAnchor.constraint(equalTo: flagImageView.bottomAnchor, constant: 2),
-//            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 2),
-//            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -2)
-//        ])
     }
     private func setFlag(for country: Country) {
         WebService.shared.getISO(with: country.name) { [weak self] result in

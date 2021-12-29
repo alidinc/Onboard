@@ -1,0 +1,3 @@
+[submodule "SevenAppsKit"]
+	path = SevenAppsKit
+	url = https://github.com/ilkerc/SevenAppsKit.git
