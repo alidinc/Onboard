@@ -31,7 +31,7 @@ class LandingViewController: UIViewController {
     private let imageView = RCImageView(frame: .zero)
     private let imagePicker = UIImagePickerController()
     private let isCameraAvailable = UIImagePickerController.isCameraDeviceAvailable(.front) || UIImagePickerController.isCameraDeviceAvailable(.rear)
-    private let viewModel = LandingViewModel()
+
 
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -95,10 +95,11 @@ extension LandingViewController: UINavigationControllerDelegate, UIImagePickerCo
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let editedImage = info[.editedImage] as? UIImage {
             imageView.image = editedImage
-            viewModel.detectSegmentationMask(on: editedImage, for: imageView)
+            
+            //viewModel.detectSegmentationMask(on: editedImage, for: imageView)
         } else if let originalImage = info[.originalImage] as? UIImage {
             imageView.image = originalImage
-            viewModel.detectSegmentationMask(on: originalImage, for: imageView)
+            //viewModel.detectSegmentationMask(on: originalImage, for: imageView)
         }
         self.dismiss(animated: true, completion: nil)
     }

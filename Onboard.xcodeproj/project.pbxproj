@@ -34,6 +34,27 @@
 		DA32910A2771FBF8003545C9 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3291092771FBF8003545C9 /* LandingViewController.swift */; };
 		DA32910C2772032B003545C9 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA32910B2772032B003545C9 /* UIViewController+Extension.swift */; };
 		DA329118277219CC003545C9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA32911A277219CC003545C9 /* Localizable.strings */; };
+		DA4F6267277C60A2007EBDC0 /* LandingViewModelWithCoreML.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4F6266277C60A2007EBDC0 /* LandingViewModelWithCoreML.swift */; };
+		DA4F6269277C67E7007EBDC0 /* DeepLabV3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = DA4F6268277C67E7007EBDC0 /* DeepLabV3.mlmodel */; };
+		DA4F6284277C6E0A007EBDC0 /* Predictions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4F6273277C6E09007EBDC0 /* Predictions.swift */; };
+		DA4F6285277C6E0A007EBDC0 /* CoreML+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4F6274277C6E09007EBDC0 /* CoreML+Combine.swift */; };
+		DA4F6286277C6E0A007EBDC0 /* MLMultiArray+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4F6275277C6E09007EBDC0 /* MLMultiArray+Image.swift */; };
+		DA4F6287277C6E0A007EBDC0 /* CGImage+RawBytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4F6276277C6E09007EBDC0 /* CGImage+RawBytes.swift */; };
+		DA4F6288277C6E0A007EBDC0 /* MLMultiArray+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4F6277277C6E09007EBDC0 /* MLMultiArray+Helpers.swift */; };
+		DA4F6289277C6E0A007EBDC0 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4F6278277C6E09007EBDC0 /* Array+Extensions.swift */; };
+		DA4F628A277C6E0A007EBDC0 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4F6279277C6E09007EBDC0 /* Math.swift */; };
+		DA4F628B277C6E0A007EBDC0 /* CVPixelBuffer+Rotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4F627A277C6E0A007EBDC0 /* CVPixelBuffer+Rotate.swift */; };
+		DA4F628C277C6E0A007EBDC0 /* NonMaxSuppression.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4F627B277C6E0A007EBDC0 /* NonMaxSuppression.swift */; };
+		DA4F628D277C6E0A007EBDC0 /* CGImagePropertyOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4F627C277C6E0A007EBDC0 /* CGImagePropertyOrientation.swift */; };
+		DA4F628E277C6E0A007EBDC0 /* CVPixelBuffer+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4F627D277C6E0A007EBDC0 /* CVPixelBuffer+Create.swift */; };
+		DA4F628F277C6E0A007EBDC0 /* MLModel+Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4F627E277C6E0A007EBDC0 /* MLModel+Images.swift */; };
+		DA4F6290277C6E0A007EBDC0 /* CGImage+CVPixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4F627F277C6E0A007EBDC0 /* CGImage+CVPixelBuffer.swift */; };
+		DA4F6291277C6E0A007EBDC0 /* CVPixelBuffer+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4F6280277C6E0A007EBDC0 /* CVPixelBuffer+Resize.swift */; };
+		DA4F6292277C6E0A007EBDC0 /* UIImage+CVPixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4F6281277C6E0A007EBDC0 /* UIImage+CVPixelBuffer.swift */; };
+		DA4F6293277C6E0A007EBDC0 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4F6282277C6E0A007EBDC0 /* UIImage+Extensions.swift */; };
+		DA4F6294277C6E0A007EBDC0 /* UIImage+RawBytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4F6283277C6E0A007EBDC0 /* UIImage+RawBytes.swift */; };
+		DA4F6296277C6E76007EBDC0 /* CIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4F6295277C6E76007EBDC0 /* CIImage+Extension.swift */; };
+		DA4F6298277C6E91007EBDC0 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4F6297277C6E91007EBDC0 /* UIImage+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +92,27 @@
 		DA32911427721916003545C9 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		DA3291152772194E003545C9 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		DA329119277219CC003545C9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DA4F6266277C60A2007EBDC0 /* LandingViewModelWithCoreML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewModelWithCoreML.swift; sourceTree = "<group>"; };
+		DA4F6268277C67E7007EBDC0 /* DeepLabV3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DeepLabV3.mlmodel; sourceTree = "<group>"; };
+		DA4F6273277C6E09007EBDC0 /* Predictions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Predictions.swift; sourceTree = "<group>"; };
+		DA4F6274277C6E09007EBDC0 /* CoreML+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreML+Combine.swift"; sourceTree = "<group>"; };
+		DA4F6275277C6E09007EBDC0 /* MLMultiArray+Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MLMultiArray+Image.swift"; sourceTree = "<group>"; };
+		DA4F6276277C6E09007EBDC0 /* CGImage+RawBytes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGImage+RawBytes.swift"; sourceTree = "<group>"; };
+		DA4F6277277C6E09007EBDC0 /* MLMultiArray+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MLMultiArray+Helpers.swift"; sourceTree = "<group>"; };
+		DA4F6278277C6E09007EBDC0 /* Array+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
+		DA4F6279277C6E09007EBDC0 /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
+		DA4F627A277C6E0A007EBDC0 /* CVPixelBuffer+Rotate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CVPixelBuffer+Rotate.swift"; sourceTree = "<group>"; };
+		DA4F627B277C6E0A007EBDC0 /* NonMaxSuppression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NonMaxSuppression.swift; sourceTree = "<group>"; };
+		DA4F627C277C6E0A007EBDC0 /* CGImagePropertyOrientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGImagePropertyOrientation.swift; sourceTree = "<group>"; };
+		DA4F627D277C6E0A007EBDC0 /* CVPixelBuffer+Create.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CVPixelBuffer+Create.swift"; sourceTree = "<group>"; };
+		DA4F627E277C6E0A007EBDC0 /* MLModel+Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MLModel+Images.swift"; sourceTree = "<group>"; };
+		DA4F627F277C6E0A007EBDC0 /* CGImage+CVPixelBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGImage+CVPixelBuffer.swift"; sourceTree = "<group>"; };
+		DA4F6280277C6E0A007EBDC0 /* CVPixelBuffer+Resize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CVPixelBuffer+Resize.swift"; sourceTree = "<group>"; };
+		DA4F6281277C6E0A007EBDC0 /* UIImage+CVPixelBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+CVPixelBuffer.swift"; sourceTree = "<group>"; };
+		DA4F6282277C6E0A007EBDC0 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		DA4F6283277C6E0A007EBDC0 /* UIImage+RawBytes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+RawBytes.swift"; sourceTree = "<group>"; };
+		DA4F6295277C6E76007EBDC0 /* CIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CIImage+Extension.swift"; sourceTree = "<group>"; };
+		DA4F6297277C6E91007EBDC0 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		E9A0A0907B1C624293FEB598 /* Pods-Onboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Onboard.debug.xcconfig"; path = "Target Support Files/Pods-Onboard/Pods-Onboard.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -132,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				DA03B91F277B39AC003537EF /* LandingViewModel.swift */,
+				DA4F6266277C60A2007EBDC0 /* LandingViewModelWithCoreML.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -165,6 +208,7 @@
 		DA287033276CAB8400A8B3E0 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				DA4F6272277C6DF7007EBDC0 /* CoreMLHelpers */,
 				DA32910D277215FA003545C9 /* Extensions */,
 				DA28703B276CF5B400A8B3E0 /* Endpoint.swift */,
 				DA3290FA277012A6003545C9 /* RCError.swift */,
@@ -186,6 +230,7 @@
 		DA287035276CABD500A8B3E0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DA4F6268277C67E7007EBDC0 /* DeepLabV3.mlmodel */,
 				DA287036276CABE600A8B3E0 /* Country.swift */,
 				DA3290FE27702D84003545C9 /* Flag.swift */,
 			);
@@ -195,11 +240,37 @@
 		DA32910D277215FA003545C9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				DA329100277052A2003545C9 /* UIView+Extension.swift */,
 				DA28702E276CAB2400A8B3E0 /* Bundle+Extension.swift */,
+				DA4F6295277C6E76007EBDC0 /* CIImage+Extension.swift */,
+				DA4F6297277C6E91007EBDC0 /* UIImage+Extension.swift */,
+				DA329100277052A2003545C9 /* UIView+Extension.swift */,
 				DA32910B2772032B003545C9 /* UIViewController+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DA4F6272277C6DF7007EBDC0 /* CoreMLHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				DA4F6278277C6E09007EBDC0 /* Array+Extensions.swift */,
+				DA4F627F277C6E0A007EBDC0 /* CGImage+CVPixelBuffer.swift */,
+				DA4F6276277C6E09007EBDC0 /* CGImage+RawBytes.swift */,
+				DA4F627C277C6E0A007EBDC0 /* CGImagePropertyOrientation.swift */,
+				DA4F6274277C6E09007EBDC0 /* CoreML+Combine.swift */,
+				DA4F627D277C6E0A007EBDC0 /* CVPixelBuffer+Create.swift */,
+				DA4F6280277C6E0A007EBDC0 /* CVPixelBuffer+Resize.swift */,
+				DA4F627A277C6E0A007EBDC0 /* CVPixelBuffer+Rotate.swift */,
+				DA4F6279277C6E09007EBDC0 /* Math.swift */,
+				DA4F627E277C6E0A007EBDC0 /* MLModel+Images.swift */,
+				DA4F6277277C6E09007EBDC0 /* MLMultiArray+Helpers.swift */,
+				DA4F6275277C6E09007EBDC0 /* MLMultiArray+Image.swift */,
+				DA4F627B277C6E0A007EBDC0 /* NonMaxSuppression.swift */,
+				DA4F6273277C6E09007EBDC0 /* Predictions.swift */,
+				DA4F6281277C6E0A007EBDC0 /* UIImage+CVPixelBuffer.swift */,
+				DA4F6282277C6E0A007EBDC0 /* UIImage+Extensions.swift */,
+				DA4F6283277C6E0A007EBDC0 /* UIImage+RawBytes.swift */,
+			);
+			path = CoreMLHelpers;
 			sourceTree = "<group>";
 		};
 		DD0F53443263144543EE81D8 /* Pods */ = {
@@ -399,25 +470,46 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA4F6294277C6E0A007EBDC0 /* UIImage+RawBytes.swift in Sources */,
+				DA4F6290277C6E0A007EBDC0 /* CGImage+CVPixelBuffer.swift in Sources */,
 				DA0292C4276FED3300580401 /* UIHelper.swift in Sources */,
+				DA4F6285277C6E0A007EBDC0 /* CoreML+Combine.swift in Sources */,
 				DA0292C7276FF31C00580401 /* RCCountryCell.swift in Sources */,
+				DA4F6289277C6E0A007EBDC0 /* Array+Extensions.swift in Sources */,
 				DA329101277052A2003545C9 /* UIView+Extension.swift in Sources */,
 				DA0030CF276B7BA9001EDACB /* MainViewController.swift in Sources */,
 				DA28702F276CAB2400A8B3E0 /* Bundle+Extension.swift in Sources */,
+				DA4F6269277C67E7007EBDC0 /* DeepLabV3.mlmodel in Sources */,
+				DA4F628B277C6E0A007EBDC0 /* CVPixelBuffer+Rotate.swift in Sources */,
 				DA3290FB277012A6003545C9 /* RCError.swift in Sources */,
+				DA4F6291277C6E0A007EBDC0 /* CVPixelBuffer+Resize.swift in Sources */,
 				DA28703C276CF5B400A8B3E0 /* Endpoint.swift in Sources */,
 				DA32910C2772032B003545C9 /* UIViewController+Extension.swift in Sources */,
 				DA287039276CAE4500A8B3E0 /* CountriesViewController.swift in Sources */,
 				DA3290FF27702D84003545C9 /* Flag.swift in Sources */,
+				DA4F6296277C6E76007EBDC0 /* CIImage+Extension.swift in Sources */,
 				DA03B920277B39AC003537EF /* LandingViewModel.swift in Sources */,
+				DA4F628A277C6E0A007EBDC0 /* Math.swift in Sources */,
 				DA3290FD2770225F003545C9 /* RCImageView.swift in Sources */,
 				DA3291082771E70D003545C9 /* R.generated.swift in Sources */,
+				DA4F628D277C6E0A007EBDC0 /* CGImagePropertyOrientation.swift in Sources */,
 				DA32910A2771FBF8003545C9 /* LandingViewController.swift in Sources */,
+				DA4F6292277C6E0A007EBDC0 /* UIImage+CVPixelBuffer.swift in Sources */,
+				DA4F6287277C6E0A007EBDC0 /* CGImage+RawBytes.swift in Sources */,
+				DA4F628E277C6E0A007EBDC0 /* CVPixelBuffer+Create.swift in Sources */,
 				DA3290F927701254003545C9 /* WebService.swift in Sources */,
 				DA3290F327701069003545C9 /* RCLabel.swift in Sources */,
+				DA4F6298277C6E91007EBDC0 /* UIImage+Extension.swift in Sources */,
 				DA0030CB276B7BA9001EDACB /* AppDelegate.swift in Sources */,
+				DA4F6284277C6E0A007EBDC0 /* Predictions.swift in Sources */,
+				DA4F628C277C6E0A007EBDC0 /* NonMaxSuppression.swift in Sources */,
+				DA4F6286277C6E0A007EBDC0 /* MLMultiArray+Image.swift in Sources */,
 				DA287037276CABE600A8B3E0 /* Country.swift in Sources */,
+				DA4F6267277C60A2007EBDC0 /* LandingViewModelWithCoreML.swift in Sources */,
+				DA4F628F277C6E0A007EBDC0 /* MLModel+Images.swift in Sources */,
 				DA0030CD276B7BA9001EDACB /* SceneDelegate.swift in Sources */,
+				DA4F6293277C6E0A007EBDC0 /* UIImage+Extensions.swift in Sources */,
+				DA4F6288277C6E0A007EBDC0 /* MLMultiArray+Helpers.swift in Sources */,
 				DA0030E1276B903E001EDACB /* RemoteConfigService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
