@@ -17,11 +17,7 @@ enum ValueKey: String {
 
 class RemoteConfigService {
     // MARK: - Properties
-<<<<<<< HEAD
     private let remoteConfig = RemoteConfig.remoteConfig()
-=======
-    var remoteConfig = RemoteConfig.remoteConfig()
->>>>>>> cd08546e009a05615e4d0f1156c2ed05b9bc0d10
     static let shared = RemoteConfigService()
     private init() {}
     // MARK: - Methods
@@ -47,7 +43,6 @@ class RemoteConfigService {
     func int(forKey key: ValueKey) -> Int {
       self.remoteConfig[key.rawValue].numberValue.intValue
     }
-<<<<<<< HEAD
 
     func jsonValue<T: Codable>(forKey key: ValueKey, expecting: T.Type) -> T {
         let dataValue = self.remoteConfig.configValue(forKey: key.rawValue).dataValue
@@ -57,6 +52,4 @@ class RemoteConfigService {
             return Bundle.main.decode(expecting, from: "countries.json")
         }
     }
-=======
->>>>>>> cd08546e009a05615e4d0f1156c2ed05b9bc0d10
 }
