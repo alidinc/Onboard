@@ -11,9 +11,15 @@ class WebService {
     // MARK: - Properties
     static let shared = WebService()
     private init() {}
+<<<<<<< HEAD
     private let cache = NSCache<NSString, UIImage>()
     // MARK: - Methods
     private func showNetworkResponse(data : Data){
+=======
+    let cache = NSCache<NSString, UIImage>()
+    // MARK: - Methods
+    func showNetworkResponse(data : Data){
+>>>>>>> cd08546e009a05615e4d0f1156c2ed05b9bc0d10
         do {
             if let jsonResult = try JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary {
                 print(jsonResult)
@@ -30,7 +36,11 @@ class WebService {
         do {
             request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
         } catch {
+<<<<<<< HEAD
             completion(.failure(.invalidData))
+=======
+            /// find something else  @ALIWORKKKKKKKKKK
+>>>>>>> cd08546e009a05615e4d0f1156c2ed05b9bc0d10
         }
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
@@ -42,7 +52,11 @@ class WebService {
                 self.showNetworkResponse(data: data)
                 do {
                     let decoder = JSONDecoder()
+<<<<<<< HEAD
                     let jsonResponse = try decoder.decode(Flag.self, from: data)
+=======
+                    guard let jsonResponse = try decoder.decode(FlagData.self, from: data).data else { return }
+>>>>>>> cd08546e009a05615e4d0f1156c2ed05b9bc0d10
                     completion(.success(jsonResponse))
                 } catch {
                     print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
