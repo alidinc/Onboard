@@ -55,6 +55,7 @@
 		DA4F6294277C6E0A007EBDC0 /* UIImage+RawBytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4F6283277C6E0A007EBDC0 /* UIImage+RawBytes.swift */; };
 		DA4F6296277C6E76007EBDC0 /* CIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4F6295277C6E76007EBDC0 /* CIImage+Extension.swift */; };
 		DA4F6298277C6E91007EBDC0 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4F6297277C6E91007EBDC0 /* UIImage+Extension.swift */; };
+		DAC1543F277DBDD500D787DF /* FaceDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC1543E277DBDD500D787DF /* FaceDetector.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -113,6 +114,7 @@
 		DA4F6283277C6E0A007EBDC0 /* UIImage+RawBytes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+RawBytes.swift"; sourceTree = "<group>"; };
 		DA4F6295277C6E76007EBDC0 /* CIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CIImage+Extension.swift"; sourceTree = "<group>"; };
 		DA4F6297277C6E91007EBDC0 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		DAC1543E277DBDD500D787DF /* FaceDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceDetector.swift; sourceTree = "<group>"; };
 		E9A0A0907B1C624293FEB598 /* Pods-Onboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Onboard.debug.xcconfig"; path = "Target Support Files/Pods-Onboard/Pods-Onboard.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -212,6 +214,7 @@
 				DA32910D277215FA003545C9 /* Extensions */,
 				DA28703B276CF5B400A8B3E0 /* Endpoint.swift */,
 				DA3290FA277012A6003545C9 /* RCError.swift */,
+				DAC1543E277DBDD500D787DF /* FaceDetector.swift */,
 				DA0292C3276FED3300580401 /* UIHelper.swift */,
 			);
 			path = Utils;
@@ -492,6 +495,7 @@
 				DA4F628A277C6E0A007EBDC0 /* Math.swift in Sources */,
 				DA3290FD2770225F003545C9 /* RCImageView.swift in Sources */,
 				DA3291082771E70D003545C9 /* R.generated.swift in Sources */,
+				DAC1543F277DBDD500D787DF /* FaceDetector.swift in Sources */,
 				DA4F628D277C6E0A007EBDC0 /* CGImagePropertyOrientation.swift in Sources */,
 				DA32910A2771FBF8003545C9 /* LandingViewController.swift in Sources */,
 				DA4F6292277C6E0A007EBDC0 /* UIImage+CVPixelBuffer.swift in Sources */,

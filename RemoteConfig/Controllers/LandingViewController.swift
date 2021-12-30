@@ -95,10 +95,11 @@ extension LandingViewController: UINavigationControllerDelegate, UIImagePickerCo
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let editedImage = info[.editedImage] as? UIImage {
             imageView.image = editedImage
-
+            FaceDetector.shared.faceDetectRequest(for: editedImage, in: self)
             //viewModel.detectSegmentationMask(on: editedImage, for: imageView)
         } else if let originalImage = info[.originalImage] as? UIImage {
             imageView.image = originalImage
+            FaceDetector.shared.faceDetectRequest(for: originalImage, in: self)
             //viewModel.detectSegmentationMask(on: originalImage, for: imageView)
         }
         self.dismiss(animated: true, completion: nil)

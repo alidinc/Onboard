@@ -1,12 +1,9 @@
 disabled_rules: # rule identifiers to exclude from running
   - colon
   - comma
-<<<<<<< HEAD
   - large_tuple
-=======
   - line_length
   - type_name
->>>>>>> cd08546e009a05615e4d0f1156c2ed05b9bc0d10
   - opening_brace
   - control_statement
   - identifier_name #rule for checking variable conditions (Upper case , lower case , underscore )
@@ -28,13 +25,9 @@ opt_in_rules: # some rules are only opt-in
 excluded: # paths to ignore during linting. Takes precedence over `included`.
   - Carthage
   - Pods
-<<<<<<< HEAD
   - SevenAppsKit
   - R.generated.swift
   - Pods\SnapKit
-=======
-  - R.generated.swift
->>>>>>> cd08546e009a05615e4d0f1156c2ed05b9bc0d10
   - AppFolder\ App/Class/*
  # - AppFolder\ App/ViewController/* //Enabled for this
 
@@ -50,11 +43,8 @@ force_try:
 # rules that have both warning and error levels, can set just the warning level
 # implicitly
 
-<<<<<<< HEAD
 line_length: 220
-=======
-line_length: 200
->>>>>>> cd08546e009a05615e4d0f1156c2ed05b9bc0d10
+
 # they can set both implicitly with an array
 
 type_body_length:

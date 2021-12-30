@@ -28,6 +28,7 @@ pod 'SnapKit', '~> 5.0.0'
   pod 'SevenAppsKit/AnalyticsAdapty', :path => './SevenAppsKit'
   pod 'SevenAppsKit/AnalyticsFacebook', :path => './SevenAppsKit'
 
+
 post_install do |installer|
     installer.pods_project.targets.each do |target|
         target.build_configurations.each do |config|
