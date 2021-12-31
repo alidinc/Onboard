@@ -1,54 +1,50 @@
-////
-////  UIImage+Extension.swift
-////  Onboard
-////
-////  Created by Ali Dinç on 29/12/2021.
-////
 //
-//import UIKit
-//import CoreML
+//  UIImage+Extension.swift
+//  Onboard
 //
-//extension UIImage {
-//
-//    enum RemoveBackroundResult {
-//        case background
-//        case finalImage
-//    }
-//
-//    func removeBackground(returnResult: RemoveBackroundResult) -> UIImage? {
-//        guard let model = getDeepLabV3Model() else { return nil }
-//        let width: CGFloat = 513
-//        let height: CGFloat = 513
-//        let resizedImage = resized(to: CGSize(width: height, height: height), scale: 1)
-//        guard let pixelBuffer = resizedImage.pixelBuffer(width: Int(width), height: Int(height)),
-//        let outputPredictionImage = try? model.prediction(image: pixelBuffer),
-//        let outputImage = outputPredictionImage.semanticPredictions.image(min: 0, max: 1, axes: (0, 0, 1)),
-//        let outputCIImage = CIImage(image: outputImage),
-//              let maskImage = outputCIImage.removeWhitePixels() else { return nil }
-//        // let maskBlurImage = maskImage.applyBlurEffect() else { return nil }
-//        switch returnResult {
-//        case .finalImage:
-//            guard let resizedCIImage = CIImage(image: resizedImage),
-//                  let compositedImage = resizedCIImage.composite(with: maskImage) else { return nil }
-//            let finalImage = UIImage(ciImage: compositedImage)
-//                .resized(to: CGSize(width: size.width, height: size.height))
-//            return finalImage
-//        case .background:
-//            let finalImage = UIImage(
-//                ciImage: maskImage,
-//                scale: scale,
-//                orientation: self.imageOrientation
-//            ).resized(to: CGSize(width: size.width, height: size.height))
-//            return finalImage
-//        }
-//    }
-//
-//    private func getDeepLabV3Model() -> DeepLabV3? {
-//        do {
-//            let config = MLModelConfiguration()
-//            return try DeepLabV3(configuration: config)
-//        } catch {
-//            return nil
-//        }
-//    }
-//}
+//  Created by Ali Dinç on 29/12/2021.
+
+
+import UIKit
+
+extension UIImage {
+    class func imageFromColor(color: UIColor, size: CGSize=CGSize(width: 1, height: 1), scale: CGFloat) -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(size, false, scale)
+        color.setFill()
+        UIRectFill(CGRect(origin: CGPoint.zero, size: size))
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
+    }
+
+    func resizedImage(for size: CGSize) -> UIImage? {
+        let image = self.cgImage
+        print(size)
+        let context = CGContext(data: nil,
+                                width: Int(size.width),
+                                height: Int(size.height),
+                                bitsPerComponent: image!.bitsPerComponent,
+                                bytesPerRow: Int(size.width),
+                                space: image?.colorSpace ?? CGColorSpace(name: CGColorSpace.sRGB)!,
+                                bitmapInfo: image!.bitmapInfo.rawValue)
+        context?.interpolationQuality = .high
+        context?.draw(image!, in: CGRect(origin: .zero, size: size))
+
+        guard let scaledImage = context?.makeImage() else { return nil }
+
+        return UIImage(cgImage: scaledImage)
+    }
+
+    func fixOrientation() -> UIImage? {
+        switch imageOrientation {
+        case .up:
+            return self
+        default:
+            UIGraphicsBeginImageContextWithOptions(size, false, scale)
+            draw(in: CGRect(origin: .zero, size: size))
+            let result = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            return result
+        }
+    }
+}

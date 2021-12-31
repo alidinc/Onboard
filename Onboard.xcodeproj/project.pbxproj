@@ -17,7 +17,6 @@
 		DA0030E1276B903E001EDACB /* RemoteConfigService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0030E0276B903E001EDACB /* RemoteConfigService.swift */; };
 		DA0292C4276FED3300580401 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0292C3276FED3300580401 /* UIHelper.swift */; };
 		DA0292C7276FF31C00580401 /* RCCountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0292C6276FF31C00580401 /* RCCountryCell.swift */; };
-		DA03B920277B39AC003537EF /* LandingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA03B91F277B39AC003537EF /* LandingViewModel.swift */; };
 		DA28702D276CA01000A8B3E0 /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = DA28702C276CA01000A8B3E0 /* countries.json */; };
 		DA28702F276CAB2400A8B3E0 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28702E276CAB2400A8B3E0 /* Bundle+Extension.swift */; };
 		DA287037276CABE600A8B3E0 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA287036276CABE600A8B3E0 /* Country.swift */; };
@@ -34,7 +33,6 @@
 		DA32910A2771FBF8003545C9 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3291092771FBF8003545C9 /* LandingViewController.swift */; };
 		DA32910C2772032B003545C9 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA32910B2772032B003545C9 /* UIViewController+Extension.swift */; };
 		DA329118277219CC003545C9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA32911A277219CC003545C9 /* Localizable.strings */; };
-		DA4F6267277C60A2007EBDC0 /* LandingViewModelWithCoreML.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4F6266277C60A2007EBDC0 /* LandingViewModelWithCoreML.swift */; };
 		DA4F6269277C67E7007EBDC0 /* DeepLabV3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = DA4F6268277C67E7007EBDC0 /* DeepLabV3.mlmodel */; };
 		DA4F6284277C6E0A007EBDC0 /* Predictions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4F6273277C6E09007EBDC0 /* Predictions.swift */; };
 		DA4F6285277C6E0A007EBDC0 /* CoreML+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4F6274277C6E09007EBDC0 /* CoreML+Combine.swift */; };
@@ -53,9 +51,10 @@
 		DA4F6292277C6E0A007EBDC0 /* UIImage+CVPixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4F6281277C6E0A007EBDC0 /* UIImage+CVPixelBuffer.swift */; };
 		DA4F6293277C6E0A007EBDC0 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4F6282277C6E0A007EBDC0 /* UIImage+Extensions.swift */; };
 		DA4F6294277C6E0A007EBDC0 /* UIImage+RawBytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4F6283277C6E0A007EBDC0 /* UIImage+RawBytes.swift */; };
-		DA4F6296277C6E76007EBDC0 /* CIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4F6295277C6E76007EBDC0 /* CIImage+Extension.swift */; };
 		DA4F6298277C6E91007EBDC0 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4F6297277C6E91007EBDC0 /* UIImage+Extension.swift */; };
 		DAC1543F277DBDD500D787DF /* FaceDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC1543E277DBDD500D787DF /* FaceDetector.swift */; };
+		DAC1544A277E881700D787DF /* SelfieRemovalDelegate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC15449277E881700D787DF /* SelfieRemovalDelegate+Extension.swift */; };
+		DAC1544C277E886D00D787DF /* ObjectRemovalDelegate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC1544B277E886D00D787DF /* ObjectRemovalDelegate+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,7 +73,6 @@
 		DA0030E0276B903E001EDACB /* RemoteConfigService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigService.swift; sourceTree = "<group>"; };
 		DA0292C3276FED3300580401 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		DA0292C6276FF31C00580401 /* RCCountryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCCountryCell.swift; sourceTree = "<group>"; };
-		DA03B91F277B39AC003537EF /* LandingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewModel.swift; sourceTree = "<group>"; };
 		DA28702C276CA01000A8B3E0 /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
 		DA28702E276CAB2400A8B3E0 /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		DA287036276CABE600A8B3E0 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
@@ -93,7 +91,6 @@
 		DA32911427721916003545C9 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		DA3291152772194E003545C9 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		DA329119277219CC003545C9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		DA4F6266277C60A2007EBDC0 /* LandingViewModelWithCoreML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewModelWithCoreML.swift; sourceTree = "<group>"; };
 		DA4F6268277C67E7007EBDC0 /* DeepLabV3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DeepLabV3.mlmodel; sourceTree = "<group>"; };
 		DA4F6273277C6E09007EBDC0 /* Predictions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Predictions.swift; sourceTree = "<group>"; };
 		DA4F6274277C6E09007EBDC0 /* CoreML+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreML+Combine.swift"; sourceTree = "<group>"; };
@@ -112,9 +109,10 @@
 		DA4F6281277C6E0A007EBDC0 /* UIImage+CVPixelBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+CVPixelBuffer.swift"; sourceTree = "<group>"; };
 		DA4F6282277C6E0A007EBDC0 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		DA4F6283277C6E0A007EBDC0 /* UIImage+RawBytes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+RawBytes.swift"; sourceTree = "<group>"; };
-		DA4F6295277C6E76007EBDC0 /* CIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CIImage+Extension.swift"; sourceTree = "<group>"; };
 		DA4F6297277C6E91007EBDC0 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		DAC1543E277DBDD500D787DF /* FaceDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceDetector.swift; sourceTree = "<group>"; };
+		DAC15449277E881700D787DF /* SelfieRemovalDelegate+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SelfieRemovalDelegate+Extension.swift"; sourceTree = "<group>"; };
+		DAC1544B277E886D00D787DF /* ObjectRemovalDelegate+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObjectRemovalDelegate+Extension.swift"; sourceTree = "<group>"; };
 		E9A0A0907B1C624293FEB598 /* Pods-Onboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Onboard.debug.xcconfig"; path = "Target Support Files/Pods-Onboard/Pods-Onboard.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -151,6 +149,7 @@
 		DA0030C9276B7BA9001EDACB /* RemoteConfig */ = {
 			isa = PBXGroup;
 			children = (
+				DAC15442277E508500D787DF /* Protocols */,
 				DA287035276CABD500A8B3E0 /* Models */,
 				DA0292C5276FF30600580401 /* View */,
 				DA03B91E277B3996003537EF /* ViewModels */,
@@ -175,8 +174,6 @@
 		DA03B91E277B3996003537EF /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				DA03B91F277B39AC003537EF /* LandingViewModel.swift */,
-				DA4F6266277C60A2007EBDC0 /* LandingViewModelWithCoreML.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -201,8 +198,9 @@
 		DA287032276CAB7E00A8B3E0 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				DA3290F827701254003545C9 /* WebService.swift */,
+				DAC1543E277DBDD500D787DF /* FaceDetector.swift */,
 				DA0030E0276B903E001EDACB /* RemoteConfigService.swift */,
+				DA3290F827701254003545C9 /* WebService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -214,7 +212,6 @@
 				DA32910D277215FA003545C9 /* Extensions */,
 				DA28703B276CF5B400A8B3E0 /* Endpoint.swift */,
 				DA3290FA277012A6003545C9 /* RCError.swift */,
-				DAC1543E277DBDD500D787DF /* FaceDetector.swift */,
 				DA0292C3276FED3300580401 /* UIHelper.swift */,
 			);
 			path = Utils;
@@ -244,7 +241,6 @@
 			isa = PBXGroup;
 			children = (
 				DA28702E276CAB2400A8B3E0 /* Bundle+Extension.swift */,
-				DA4F6295277C6E76007EBDC0 /* CIImage+Extension.swift */,
 				DA4F6297277C6E91007EBDC0 /* UIImage+Extension.swift */,
 				DA329100277052A2003545C9 /* UIView+Extension.swift */,
 				DA32910B2772032B003545C9 /* UIViewController+Extension.swift */,
@@ -274,6 +270,15 @@
 				DA4F6283277C6E0A007EBDC0 /* UIImage+RawBytes.swift */,
 			);
 			path = CoreMLHelpers;
+			sourceTree = "<group>";
+		};
+		DAC15442277E508500D787DF /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				DAC1544B277E886D00D787DF /* ObjectRemovalDelegate+Extension.swift */,
+				DAC15449277E881700D787DF /* SelfieRemovalDelegate+Extension.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		DD0F53443263144543EE81D8 /* Pods */ = {
@@ -490,8 +495,6 @@
 				DA32910C2772032B003545C9 /* UIViewController+Extension.swift in Sources */,
 				DA287039276CAE4500A8B3E0 /* CountriesViewController.swift in Sources */,
 				DA3290FF27702D84003545C9 /* Flag.swift in Sources */,
-				DA4F6296277C6E76007EBDC0 /* CIImage+Extension.swift in Sources */,
-				DA03B920277B39AC003537EF /* LandingViewModel.swift in Sources */,
 				DA4F628A277C6E0A007EBDC0 /* Math.swift in Sources */,
 				DA3290FD2770225F003545C9 /* RCImageView.swift in Sources */,
 				DA3291082771E70D003545C9 /* R.generated.swift in Sources */,
@@ -500,6 +503,7 @@
 				DA32910A2771FBF8003545C9 /* LandingViewController.swift in Sources */,
 				DA4F6292277C6E0A007EBDC0 /* UIImage+CVPixelBuffer.swift in Sources */,
 				DA4F6287277C6E0A007EBDC0 /* CGImage+RawBytes.swift in Sources */,
+				DAC1544A277E881700D787DF /* SelfieRemovalDelegate+Extension.swift in Sources */,
 				DA4F628E277C6E0A007EBDC0 /* CVPixelBuffer+Create.swift in Sources */,
 				DA3290F927701254003545C9 /* WebService.swift in Sources */,
 				DA3290F327701069003545C9 /* RCLabel.swift in Sources */,
@@ -507,9 +511,9 @@
 				DA0030CB276B7BA9001EDACB /* AppDelegate.swift in Sources */,
 				DA4F6284277C6E0A007EBDC0 /* Predictions.swift in Sources */,
 				DA4F628C277C6E0A007EBDC0 /* NonMaxSuppression.swift in Sources */,
+				DAC1544C277E886D00D787DF /* ObjectRemovalDelegate+Extension.swift in Sources */,
 				DA4F6286277C6E0A007EBDC0 /* MLMultiArray+Image.swift in Sources */,
 				DA287037276CABE600A8B3E0 /* Country.swift in Sources */,
-				DA4F6267277C60A2007EBDC0 /* LandingViewModelWithCoreML.swift in Sources */,
 				DA4F628F277C6E0A007EBDC0 /* MLModel+Images.swift in Sources */,
 				DA0030CD276B7BA9001EDACB /* SceneDelegate.swift in Sources */,
 				DA4F6293277C6E0A007EBDC0 /* UIImage+Extensions.swift in Sources */,

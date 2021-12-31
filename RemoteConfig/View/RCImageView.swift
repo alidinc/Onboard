@@ -25,6 +25,7 @@ class RCImageView: UIImageView {
         layer.cornerRadius = 22
         contentMode = .scaleAspectFit
         clipsToBounds = true
+        layer.masksToBounds = true
         image = placeholderImage
         translatesAutoresizingMaskIntoConstraints = false
     }

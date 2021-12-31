@@ -1,30 +1,23 @@
 //
-//  ViewModel.swift
-//  RemoteConfig
+//  SelfieRemovalDelegate+Extension.swift
+//  Onboard
 //
-//  Created by Ali Dinç on 28/12/2021.
+//  Created by Ali Dinç on 31/12/2021.
 //
 
 import MLKit
 import MLKitSegmentationSelfie
 import UIKit
 
-class LandingViewModel {
+protocol SelfieRemovalDelegate: AnyObject { }
 
-    // MARK: - Properties
-    private var mask: SegmentationMask!
-    private var segmenter: Segmenter!
-
-    init() { setupSegmenter() }
-
+extension SelfieRemovalDelegate {
     // MARK: - Public
-    func detectSegmentationMask(on image: UIImage?, for imageView: UIImageView) {
+    func detectSegmentationMask(on image: UIImage?, for imageView: UIImageView, with segmenter: Segmenter) {
         guard let image = image else { return }
 
         let visionImage = VisionImage(image: image)
         visionImage.orientation = image.imageOrientation
-
-        guard let segmenter = self.segmenter else { return }
 
         segmenter.process(visionImage) { [weak self] mask, error in
             guard let self = self, error == nil, let mask = mask else { return }
@@ -40,13 +33,6 @@ class LandingViewModel {
     }
 
     // MARK: - Private
-    private func setupSegmenter() {
-        let options = SelfieSegmenterOptions()
-        options.segmenterMode = .singleImage
-        options.shouldEnableRawSizeMask = false
-        segmenter = Segmenter.segmenter(options: options)
-    }
-
     private func createUIImage(from imageBuffer: CVImageBuffer, orientation: UIImage.Orientation) -> UIImage? {
         let ciImage = CIImage(cvPixelBuffer: imageBuffer)
         let context = CIContext(options: nil)
