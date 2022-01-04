@@ -12,7 +12,7 @@ import CoreML
 protocol ObjectRemovalDelegate: AnyObject { }
 
 extension ObjectRemovalDelegate {
-    func removeBackgroundFromObjects(from inputImage: UIImage, completion: @escaping (UIImage) -> Void) {
+    func removeBackgroundFromObjectsWithCoreML(from inputImage: UIImage, completion: @escaping (UIImage) -> Void) {
         guard let mlModel = try? DeepLabV3(configuration: .init()).model else { return }
         guard let visionModel = try? VNCoreMLModel(for: mlModel) else { return }
         let request = VNCoreMLRequest(model: visionModel) { request, _ in

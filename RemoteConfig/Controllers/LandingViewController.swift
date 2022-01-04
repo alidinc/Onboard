@@ -115,7 +115,7 @@ extension LandingViewController: SelfieRemovalDelegate, ObjectRemovalDelegate {
                 DispatchQueue.main.async {
                     let confidence = String(format: "%.2f", faceDetection.confidence * 100)
                     self.presentAlertWithHandlers(title: "Face detected", message: "There's a face in this image with a confidence of %\(confidence) MLKitSegmentationSelfie will be applied.", buttonTitle: "OK") { _ in
-                        self.detectSegmentationMask(on: image, for: self.imageView, with: self.segmenter)
+                        self.removeBackgroundFromSelfieWithMLKit(on: image, for: self.imageView, with: self.segmenter)
                     } cancelHandler: { _ in
                         DispatchQueue.main.async {
                             self.imageView.image = image
@@ -123,14 +123,17 @@ extension LandingViewController: SelfieRemovalDelegate, ObjectRemovalDelegate {
                     }
                 }
             case .failure(let error):
-                print("HEEEEEEEEEEEYYYYYYYYYY")
-                self.presentAlertWithHandlers(title: "No face detected", message: error.rawValue, buttonTitle: "OK") { _ in
-                    self.removeBackgroundFromObjects(from: image) { imageOutput in
-                    self.imageView.image = imageOutput.maskInputImage(from: image)
-                    }
-                } cancelHandler: { _ in
-                    DispatchQueue.main.async {
-                        self.imageView.image = image
+                DispatchQueue.main.async {
+                    self.presentAlertWithHandlers(title: "No face detected", message: error.rawValue, buttonTitle: "OK") { _ in
+                        self.removeBackgroundFromObjectsWithCoreML(from: image) { imageOutput in
+                            DispatchQueue.main.async {
+                                self.imageView.image = imageOutput.maskInputImage(from: image)
+                            }
+                        }
+                    } cancelHandler: { _ in
+                        DispatchQueue.main.async {
+                            self.imageView.image = image
+                        }
                     }
                 }
             }

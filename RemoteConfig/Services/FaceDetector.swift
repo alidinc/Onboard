@@ -9,6 +9,11 @@ import Vision
 import SevenAppsKit
 import UIKit
 
+enum Result<Success, Failure> {
+    case success(Success)
+    case failure(Failure)
+}
+
 class FaceDetector {
     static let shared = FaceDetector()
     private init() { }
@@ -19,14 +24,12 @@ class FaceDetector {
             if error != nil {
                 completion(.failure(.unableToDetectFace))
             } else {
-                DispatchQueue.main.async {
-                    if let results = request.results as? [VNFaceObservation] {
-                        guard let observation = results.first else { return }
-                        results.isEmpty ? completion(.failure(.unableToDetectFace)) : completion(.success(observation))
-                    } else {
-                        completion(.failure(.unableToDetectFace))
-                        print("FACE UNDETECTED!!!!")
-                    }
+                if let results = request.results as? [VNFaceObservation] {
+                    guard let observation = results.first else { return }
+                    results.isEmpty ? completion(.failure(.unableToDetectFace)) : completion(.success(observation))
+                } else {
+                    completion(.failure(.unableToDetectFace))
+                    print("FACE UNDETECTED!!!!")
                 }
             }
         }

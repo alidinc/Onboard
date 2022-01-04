@@ -11,7 +11,7 @@ import UIKit
 protocol SelfieRemovalDelegate: AnyObject { }
 
 extension SelfieRemovalDelegate {
-    func detectSegmentationMask(on image: UIImage?, for imageView: UIImageView, with segmenter: Segmenter) {
+    func removeBackgroundFromSelfieWithMLKit(on image: UIImage?, for imageView: UIImageView, with segmenter: Segmenter) {
         guard let image = image else { return }
 
         let visionImage = VisionImage(image: image)

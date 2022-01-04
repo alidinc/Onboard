@@ -40,7 +40,7 @@ extension Publisher where Self.Output: MLFeatureProvider {
    idea to write a custom Publisher class, but for simple use cases `map` works
    well enough.
   */
-  public func prediction(model: MLModel) -> Publishers.Map<Self, Result<MLFeatureProvider, Error>> {
+func prediction(model: MLModel) -> Publishers.Map<Self, Result<MLFeatureProvider, Error>> {
     map { input in
       do {
         return .success(try model.prediction(from: input))
