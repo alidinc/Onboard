@@ -24,6 +24,7 @@ class FaceDetector {
                         guard let observation = results.first else { return }
                         results.isEmpty ? completion(.failure(.unableToDetectFace)) : completion(.success(observation))
                     } else {
+                        completion(.failure(.unableToDetectFace))
                         print("FACE UNDETECTED!!!!")
                     }
                 }
@@ -33,12 +34,14 @@ class FaceDetector {
     }
 
     private func performRequest(_ request: VNDetectFaceRectanglesRequest, image: UIImage) {
-        if let cgImage = image.cgImage {
-            let handler = VNImageRequestHandler(cgImage: cgImage, options: [:])
-            do {
-                try handler.perform([request])
-            } catch {
-                SAK.logger.error(error)
+        DispatchQueue.global().async {
+            if let cgImage = image.cgImage {
+                let handler = VNImageRequestHandler(cgImage: cgImage, options: [:])
+                do {
+                    try handler.perform([request])
+                } catch {
+                    SAK.logger.error(error)
+                }
             }
         }
     }

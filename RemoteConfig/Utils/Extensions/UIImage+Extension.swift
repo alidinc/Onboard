@@ -70,6 +70,5 @@ extension UIImage {
         let filteredImageRef = ciContext.createCGImage(compositeImage, from: compositeImage.extent)
 
         return UIImage(cgImage: filteredImageRef!)
-
     }
 }

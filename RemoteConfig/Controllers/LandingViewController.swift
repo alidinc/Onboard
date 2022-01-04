@@ -112,21 +112,26 @@ extension LandingViewController: SelfieRemovalDelegate, ObjectRemovalDelegate {
         FaceDetector.shared.faceDetectRequest(for: image) { result in
             switch result {
             case .success(let faceDetection):
-                let confidence = String(format: "%.2f", faceDetection.confidence * 100)
-                self.presentAlertWithHandlers(title: "Face detected", message: "There's a face in this image with a confidence of %\(confidence) MLKitSegmentationSelfie will be applied.", buttonTitle: "OK") { _ in
-                    self.detectSegmentationMask(on: image, for: self.imageView, with: self.segmenter)
-                } cancelHandler: { _ in
-                    self.imageView.image = image
-                }
-            case .failure(let error):
-                self.presentAlertWithHandlers(title: "No face detected", message: error.rawValue, buttonTitle: "OK") { _ in
-                    self.removeBackgroundFromObjects(from: image) { imageOutput in
+                DispatchQueue.main.async {
+                    let confidence = String(format: "%.2f", faceDetection.confidence * 100)
+                    self.presentAlertWithHandlers(title: "Face detected", message: "There's a face in this image with a confidence of %\(confidence) MLKitSegmentationSelfie will be applied.", buttonTitle: "OK") { _ in
+                        self.detectSegmentationMask(on: image, for: self.imageView, with: self.segmenter)
+                    } cancelHandler: { _ in
                         DispatchQueue.main.async {
-                            self.imageView.image = imageOutput.maskInputImage(from: image)
+                            self.imageView.image = image
                         }
                     }
+                }
+            case .failure(let error):
+                print("HEEEEEEEEEEEYYYYYYYYYY")
+                self.presentAlertWithHandlers(title: "No face detected", message: error.rawValue, buttonTitle: "OK") { _ in
+                    self.removeBackgroundFromObjects(from: image) { imageOutput in
+                    self.imageView.image = imageOutput.maskInputImage(from: image)
+                    }
                 } cancelHandler: { _ in
-                    self.imageView.image = image
+                    DispatchQueue.main.async {
+                        self.imageView.image = image
+                    }
                 }
             }
         }

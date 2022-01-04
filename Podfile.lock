@@ -1,18 +1,8 @@
 PODS:
   - Adapty (1.16.8)
-  - Amplitude (8.7.1)
-  - AppsFlyerFramework (6.5.0):
-    - AppsFlyerFramework/Main (= 6.5.0)
-  - AppsFlyerFramework/Main (6.5.0)
   - ASPVideoPlayer (6.1.2)
   - Atributika (4.10.1)
   - Cosmos (23.0.0)
-  - FBAEMKit (12.2.1):
-    - FBSDKCoreKit_Basics (= 12.2.1)
-  - FBSDKCoreKit (12.2.1):
-    - FBAEMKit (= 12.2.1)
-    - FBSDKCoreKit_Basics (= 12.2.1)
-  - FBSDKCoreKit_Basics (12.2.1)
   - Firebase (8.10.0):
     - Firebase/Core (= 8.10.0)
   - Firebase/Analytics (8.10.0):
@@ -148,9 +138,6 @@ PODS:
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.7.0)
   - lottie-ios (3.3.0)
-  - Mixpanel-swift (2.10.4):
-    - Mixpanel-swift/Complete (= 2.10.4)
-  - Mixpanel-swift/Complete (2.10.4)
   - MLImage (1.0.0-beta2)
   - MLKitCommon (5.0.0):
     - GoogleDataTransport (~> 9.0)
@@ -183,32 +170,11 @@ PODS:
   - nanopb/encode (2.30908.0)
   - PromisesObjC (2.0.0)
   - Protobuf (3.19.1)
-  - PushwooshXCFramework (6.3.1):
-    - PushwooshXCFramework/Core (= 6.3.1)
-  - PushwooshXCFramework/Core (6.3.1)
   - R.swift (6.1.0):
     - R.swift.Library (~> 5.3.0)
   - R.swift.Library (5.3.0)
-  - SevenAppsKit/AnalyticsAdapty (0.0.1):
-    - Adapty
-    - SevenAppsKit/CoreOnly
-  - SevenAppsKit/AnalyticsAmplitude (0.0.1):
-    - Amplitude
-    - SevenAppsKit/CoreOnly
-  - SevenAppsKit/AnalyticsAppsFlyer (0.0.1):
-    - AppsFlyerFramework
-    - SevenAppsKit/CoreOnly
-  - SevenAppsKit/AnalyticsFacebook (0.0.1):
-    - FBSDKCoreKit
-    - SevenAppsKit/CoreOnly
   - SevenAppsKit/AnalyticsFirebase (0.0.1):
     - Firebase/Analytics
-    - SevenAppsKit/CoreOnly
-  - SevenAppsKit/AnalyticsMixpanel (0.0.1):
-    - Mixpanel-swift
-    - SevenAppsKit/CoreOnly
-  - SevenAppsKit/AnalyticsPushwoosh (0.0.1):
-    - PushwooshXCFramework
     - SevenAppsKit/CoreOnly
   - SevenAppsKit/CoreOnly (0.0.1):
     - SwiftyBeaver
@@ -247,13 +213,7 @@ DEPENDENCIES:
   - FlagKit
   - GoogleMLKit/SegmentationSelfie (= 2.5.0)
   - R.swift
-  - SevenAppsKit/AnalyticsAdapty (from `./SevenAppsKit`)
-  - SevenAppsKit/AnalyticsAmplitude (from `./SevenAppsKit`)
-  - SevenAppsKit/AnalyticsAppsFlyer (from `./SevenAppsKit`)
-  - SevenAppsKit/AnalyticsFacebook (from `./SevenAppsKit`)
   - SevenAppsKit/AnalyticsFirebase (from `./SevenAppsKit`)
-  - SevenAppsKit/AnalyticsMixpanel (from `./SevenAppsKit`)
-  - SevenAppsKit/AnalyticsPushwoosh (from `./SevenAppsKit`)
   - SevenAppsKit/Firebase (from `./SevenAppsKit`)
   - SevenAppsKit/IAP (from `./SevenAppsKit`)
   - SevenAppsKit/POLYIAP (from `./SevenAppsKit`)
@@ -264,14 +224,9 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Adapty
-    - Amplitude
-    - AppsFlyerFramework
     - ASPVideoPlayer
     - Atributika
     - Cosmos
-    - FBAEMKit
-    - FBSDKCoreKit
-    - FBSDKCoreKit_Basics
     - Firebase
     - FirebaseABTesting
     - FirebaseAnalytics
@@ -290,7 +245,6 @@ SPEC REPOS:
     - GoogleUtilitiesComponents
     - GTMSessionFetcher
     - lottie-ios
-    - Mixpanel-swift
     - MLImage
     - MLKitCommon
     - MLKitSegmentationCommon
@@ -300,7 +254,6 @@ SPEC REPOS:
     - nanopb
     - PromisesObjC
     - Protobuf
-    - PushwooshXCFramework
     - R.swift
     - R.swift.Library
     - SnapKit
@@ -314,14 +267,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Adapty: 7bd19095b4e77ebbda17af2faf7268a0fdbc295b
-  Amplitude: 834c7332dfb9640a751e21c13efb22a07c0c12d4
-  AppsFlyerFramework: a5686a38cd5e5a9aa077fc83e3a4d0c4b052d6a6
   ASPVideoPlayer: 70215f5b4cfbf33614548ee56a67290f640023d0
   Atributika: 47e778507cfb3cd2c996278b0285221a62e97d71
   Cosmos: b5c6a9a637e28a061b54c8f8b1d8529d7d4db73f
-  FBAEMKit: 4cea610d0bc1680572f2aad7b25db7a2f2690d82
-  FBSDKCoreKit: 5b1992fe65802ca26be7e68bc4fac5f59fa39908
-  FBSDKCoreKit_Basics: a6a92ca628e05f86f458a4721574c5ddfb058ba3
   Firebase: 44213362f1dcc52555b935dc925ed35ac55f1b20
   FirebaseABTesting: fc7255f7e96d3cf7a1131fd68636c47e312cef76
   FirebaseAnalytics: 319c9b3b1bdd400d60e2f415dff0c5f6959e6760
@@ -340,7 +288,6 @@ SPEC CHECKSUMS:
   GoogleUtilitiesComponents: 679b2c881db3b615a2777504623df6122dd20afe
   GTMSessionFetcher: 43748f93435c2aa068b1cbe39655aaf600652e91
   lottie-ios: 6ac74dcc09904798f59b18cb3075c089d76be9ae
-  Mixpanel-swift: 9fabd0585985d32cb6951e759d307d615a9c6f7b
   MLImage: a454f9f8ecfd537783a12f9488f5be1a68820829
   MLKitCommon: 3bc17c6f7d25ce3660f030350b46ae7ec9ebca6e
   MLKitSegmentationCommon: 4c9b364bf6ba308985e2d495cd7c580c8227c5b5
@@ -350,7 +297,6 @@ SPEC CHECKSUMS:
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
   Protobuf: 3724efa50cb2846d7ccebc8691c574e85fd74471
-  PushwooshXCFramework: 94c2114c59879598dfe3a87e0d02f37f1ad894f0
   R.swift: ec98ff71c4ab2f6fd01dd077e5afd15e63a4834c
   R.swift.Library: 0fc583cb55a99e28901299cc451614cad1161962
   SevenAppsKit: 5dd9b6f6521a14dc09f6e1bdf3bdabeff5fc645d
@@ -359,6 +305,6 @@ SPEC CHECKSUMS:
   SwiftyBeaver: 84069991dd5dca07d7069100985badaca7f0ce82
   SwiftyUserDefaults: 63f80248cf5bfb3458825d9a78f2eb7e1293a040
 
-PODFILE CHECKSUM: b10505014ea7af849fc7542698277dc7da135bef
+PODFILE CHECKSUM: fe66891cdff92bda1e639d2dabe286c7c1d3f0a5
 
 COCOAPODS: 1.11.2
