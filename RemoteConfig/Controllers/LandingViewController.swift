@@ -109,13 +109,14 @@ extension LandingViewController: UINavigationControllerDelegate, UIImagePickerCo
 
 extension LandingViewController: SelfieRemovalDelegate, ObjectRemovalDelegate {
     private func setBackgroundRemover(for image: UIImage) {
-        FaceDetector.shared.faceDetectRequest(for: image) { result in
+        FaceDetector.shared.faceDetectRequest(for: image) { [weak self] result in
+            guard let self = self else { return }
             switch result {
             case .success(let faceDetection):
                 DispatchQueue.main.async {
                     let confidence = String(format: "%.2f", faceDetection.confidence * 100)
                     self.presentAlertWithHandlers(title: "Face detected", message: "There's a face in this image with a confidence of %\(confidence) MLKitSegmentationSelfie will be applied.", buttonTitle: "OK") { _ in
-                        self.removeBackgroundFromSelfieWithMLKit(on: image, for: self.imageView, with: self.segmenter)
+                        self.imageView.image = self.removeBackgroundFromSelfieWithMLKit(on: image, with: self.segmenter)
                     } cancelHandler: { _ in
                         DispatchQueue.main.async {
                             self.imageView.image = image
