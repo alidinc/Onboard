@@ -6,13 +6,11 @@
 //
 
 import MLKit
-import MLKitSegmentationSelfie
 import UIKit
 
 protocol SelfieRemovalDelegate: AnyObject { }
 
 extension SelfieRemovalDelegate {
-    // MARK: - Public
     func detectSegmentationMask(on image: UIImage?, for imageView: UIImageView, with segmenter: Segmenter) {
         guard let image = image else { return }
 
@@ -32,7 +30,7 @@ extension SelfieRemovalDelegate {
         }
     }
 
-    // MARK: - Private
+    // MARK: - Private methods
     private func createUIImage(from imageBuffer: CVImageBuffer, orientation: UIImage.Orientation) -> UIImage? {
         let ciImage = CIImage(cvPixelBuffer: imageBuffer)
         let context = CIContext(options: nil)

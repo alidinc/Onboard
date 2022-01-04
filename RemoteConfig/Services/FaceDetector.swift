@@ -13,21 +13,17 @@ class FaceDetector {
     static let shared = FaceDetector()
     private init() { }
 
-    var hasDetectedFace: Bool?
-
-    // MARK: - Public
-    func faceDetectRequest(for originalImage: UIImage, in viewController: UIViewController) {
+    // MARK: - Methods
+    func faceDetectRequest(for originalImage: UIImage, completion: @escaping (Result<Bool, RCError>) -> Void) {
         let request = VNDetectFaceRectanglesRequest { request, error in
-            if let error = error {
-                print(error)
+            if let _ = error {
+                completion(.failure(.unableToDetectFace))
             } else {
                 DispatchQueue.main.async {
-                    if (request.results?.first as? VNFaceObservation) != nil {
-                        self.hasDetectedFace = true
-                        self.showAlert(with: "Face detected!", in: viewController)
+                    if let results = request.results as? [VNFaceObservation] {
+                        results.isEmpty ? completion(.failure(.unableToDetectFace)) : completion(.success(true))
                     } else {
-                        self.hasDetectedFace = false
-                        self.showAlert(with: "Not detected", in: viewController)
+                        print("FACE UNDETECTED!!!!")
                     }
                 }
             }
@@ -35,22 +31,14 @@ class FaceDetector {
         self.performRequest(request, image: originalImage)
     }
 
-    // MARK: - Private
     private func performRequest(_ request: VNDetectFaceRectanglesRequest, image: UIImage) {
-        DispatchQueue.global(qos: .background).async {
-            if let cgImage = image.cgImage {
-                let handler = VNImageRequestHandler(cgImage: cgImage, options: [:])
-                do {
-                    try handler.perform([request])
-                } catch {
-                    SAK.logger.error(error)
-                }
+        if let cgImage = image.cgImage {
+            let handler = VNImageRequestHandler(cgImage: cgImage, options: [:])
+            do {
+                try handler.perform([request])
+            } catch {
+                SAK.logger.error(error)
             }
         }
-    }
-
-    private func showAlert(with message: String, in viewController: UIViewController) {
-        SAK.UI.AlertControllerBuilder(message: message, actions: [.okay], style: .alert)
-            .present(in: viewController, completion: nil)
     }
 }

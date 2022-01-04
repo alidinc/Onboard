@@ -99,12 +99,8 @@ extension LandingViewController: UINavigationControllerDelegate, UIImagePickerCo
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let editedImage = info[.editedImage] as? UIImage {
-            FaceDetector.shared.faceDetectRequest(for: editedImage, in: self)
-            imageView.image = editedImage
             setBackgroundRemover(for: editedImage)
         } else if let originalImage = info[.originalImage] as? UIImage {
-            FaceDetector.shared.faceDetectRequest(for: originalImage, in: self)
-            imageView.image = originalImage
             setBackgroundRemover(for: originalImage)
         }
         self.dismiss(animated: true, completion: nil)
@@ -113,11 +109,20 @@ extension LandingViewController: UINavigationControllerDelegate, UIImagePickerCo
 
 extension LandingViewController: SelfieRemovalDelegate, ObjectRemovalDelegate {
     private func setBackgroundRemover(for image: UIImage) {
-        if let hasDetectedFace = FaceDetector.shared.hasDetectedFace {
-            if hasDetectedFace {
+        FaceDetector.shared.faceDetectRequest(for: image) { result in
+            switch result {
+            case .success(_):
                 self.detectSegmentationMask(on: image, for: self.imageView, with: self.segmenter)
-            } else {
-                self.removeBackgroundFromObjects(from: image, for: self.imageView)
+            case .failure(let error):
+                self.presentAlert(title: "No face detected", message: error.rawValue, buttonTitle: "OK") { _ in
+                    self.removeBackgroundFromObjects(from: image) { imageOutput in
+                        DispatchQueue.main.async {
+                            self.imageView.image = imageOutput.maskInputImage(from: image)
+                        }
+                    }
+                } cancelHandler: { _ in
+                    self.imageView.image = image
+                }
             }
         }
     }

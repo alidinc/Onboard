@@ -4,7 +4,6 @@
 //
 //  Created by Ali Dinç on 29/12/2021.
 
-
 import UIKit
 
 extension UIImage {
@@ -46,5 +45,31 @@ extension UIImage {
             UIGraphicsEndImageContext()
             return result
         }
+    }
+}
+
+extension UIImage {
+    func maskInputImage(from inputImage: UIImage) -> UIImage? {
+        guard let bgImage = UIImage.imageFromColor(color: .yellow, size: inputImage.size, scale: inputImage.scale),
+              let inputCgImage = inputImage.cgImage,
+              let bgCgImage = bgImage.cgImage  else { return nil }
+
+        let background = CIImage(cgImage: bgCgImage)
+        let beginImage = CIImage(cgImage: inputCgImage)
+
+        guard let outputCgImage = self.cgImage else { return nil }
+        let mask = CIImage(cgImage: outputCgImage)
+
+        guard let compositeImage = CIFilter(name: "CIBlendWithMask", parameters: [
+            kCIInputImageKey: beginImage,
+            kCIInputBackgroundImageKey: background,
+            kCIInputMaskImageKey: mask])?.outputImage
+        else { return nil }
+
+        let ciContext = CIContext(options: nil)
+        let filteredImageRef = ciContext.createCGImage(compositeImage, from: compositeImage.extent)
+
+        return UIImage(cgImage: filteredImageRef!)
+
     }
 }
