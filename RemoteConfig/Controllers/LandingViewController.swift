@@ -111,10 +111,15 @@ extension LandingViewController: SelfieRemovalDelegate, ObjectRemovalDelegate {
     private func setBackgroundRemover(for image: UIImage) {
         FaceDetector.shared.faceDetectRequest(for: image) { result in
             switch result {
-            case .success(_):
-                self.detectSegmentationMask(on: image, for: self.imageView, with: self.segmenter)
+            case .success(let faceDetection):
+                let confidence = String(format: "%.2f", faceDetection.confidence * 100)
+                self.presentAlertWithHandlers(title: "Face detected", message: "There's a face in this image with a confidence of %\(confidence) MLKitSegmentationSelfie will be applied.", buttonTitle: "OK") { _ in
+                    self.detectSegmentationMask(on: image, for: self.imageView, with: self.segmenter)
+                } cancelHandler: { _ in
+                    self.imageView.image = image
+                }
             case .failure(let error):
-                self.presentAlert(title: "No face detected", message: error.rawValue, buttonTitle: "OK") { _ in
+                self.presentAlertWithHandlers(title: "No face detected", message: error.rawValue, buttonTitle: "OK") { _ in
                     self.removeBackgroundFromObjects(from: image) { imageOutput in
                         DispatchQueue.main.async {
                             self.imageView.image = imageOutput.maskInputImage(from: image)

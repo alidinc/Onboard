@@ -14,14 +14,15 @@ class FaceDetector {
     private init() { }
 
     // MARK: - Methods
-    func faceDetectRequest(for originalImage: UIImage, completion: @escaping (Result<Bool, RCError>) -> Void) {
+    func faceDetectRequest(for originalImage: UIImage, completion: @escaping (Result<VNFaceObservation, RCError>) -> Void) {
         let request = VNDetectFaceRectanglesRequest { request, error in
-            if let _ = error {
+            if error != nil {
                 completion(.failure(.unableToDetectFace))
             } else {
                 DispatchQueue.main.async {
                     if let results = request.results as? [VNFaceObservation] {
-                        results.isEmpty ? completion(.failure(.unableToDetectFace)) : completion(.success(true))
+                        guard let observation = results.first else { return }
+                        results.isEmpty ? completion(.failure(.unableToDetectFace)) : completion(.success(observation))
                     } else {
                         print("FACE UNDETECTED!!!!")
                     }
