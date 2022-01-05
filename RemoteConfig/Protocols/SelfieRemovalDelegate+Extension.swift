@@ -11,22 +11,22 @@ import UIKit
 protocol SelfieRemovalDelegate: AnyObject { }
 
 extension SelfieRemovalDelegate {
-    func removeBackgroundFromSelfieWithMLKit(on image: UIImage, with segmenter: Segmenter) -> UIImage? {
+    func removeBackgroundFromSelfieWithMLKit(on image: UIImage, for imageView: UIImageView, with segmenter: Segmenter) {
 
         let visionImage = VisionImage(image: image)
         visionImage.orientation = image.imageOrientation
-        guard let imageBuffer = self.createImageBuffer(from: image) else { return nil }
 
         segmenter.process(visionImage) { [weak self] mask, error in
             guard let self = self, error == nil, let mask = mask else { return }
+            guard let imageBuffer = self.createImageBuffer(from: image) else { return }
 
             self.applySegmentationMask(
                 mask: mask, to: imageBuffer,
                 backgroundColor: UIColor.purple.withAlphaComponent(0.5),
                 foregroundColor: nil)
+            let maskedImage = self.createUIImage(from: imageBuffer, orientation: .up)
+            imageView.image = maskedImage
         }
-        let maskedImage = self.createUIImage(from: imageBuffer, orientation: .up)
-        return maskedImage
     }
 
     // MARK: - Private methods
