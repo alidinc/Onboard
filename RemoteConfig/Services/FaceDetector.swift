@@ -22,14 +22,18 @@ class FaceDetector {
     func faceDetectRequest(for originalImage: UIImage, completion: @escaping (Result<VNFaceObservation, RCError>) -> Void) {
         let request = VNDetectFaceRectanglesRequest { request, error in
             if error != nil {
-                print("ERROR")
-            } else {
-                if let results = request.results as? [VNFaceObservation] {
-                    guard let observation = results.first else { return }
-                    results.isEmpty ? completion(.failure(.unableToDetectFace)) : completion(.success(observation))
+                completion(.failure(.unableToDetectFace))
+                return
+            }
+
+            if let results = request.results as? [VNFaceObservation] {
+                if let observation = results.first {
+                    completion(.success(observation))
                 } else {
                     completion(.failure(.unableToDetectFace))
                 }
+            } else {
+                completion(.failure(.unableToDetectFace))
             }
         }
         self.performRequest(request, image: originalImage)

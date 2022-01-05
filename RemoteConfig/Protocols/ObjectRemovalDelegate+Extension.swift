@@ -29,12 +29,14 @@ extension ObjectRemovalDelegate {
     }
 
     private func requestHandler(request: VNCoreMLRequest, for inputImage: UIImage) {
-        if let cgImage = inputImage.cgImage {
-            let handler = VNImageRequestHandler(cgImage: cgImage, options: [:])
-            do {
-                try handler.perform([request])
-            } catch {
-                print(error)
+        DispatchQueue.global().async {
+            if let cgImage = inputImage.cgImage {
+                let handler = VNImageRequestHandler(cgImage: cgImage, options: [:])
+                do {
+                    try handler.perform([request])
+                } catch {
+                    print(error)
+                }
             }
         }
     }
