@@ -54,7 +54,7 @@ class RCCountryCell: UICollectionViewCell {
         }
         stackView.snp.makeConstraints { make in
             #warning("use this instead flagImageView.snp.bottom")
-            make.top.equalTo(flagImageView.snp_bottomMargin).offset(padding)
+            make.top.equalTo(flagImageView.snp.bottom).offset(padding)
             make.leading.trailing.equalToSuperview().offset(padding)
         }
     }
@@ -65,18 +65,23 @@ class RCCountryCell: UICollectionViewCell {
             if country != self?.country {
                 return
             }
-            
             switch result {
             case .success(let result):
                 if let resultString = result.iso2 {
-                   self?.downloadSVGImage(urlString: resultString)
+                    WebService.shared.downloadImage(from: resultString) { [weak self] result in
+                        guard let image = result else { return }
+                        DispatchQueue.main.async {
+                            self?.flagImageView.image = image
+                        }
+                    }
                 }
             case .failure(let error):
                 print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
             }
         }
     }
-    
+
+    /*
     private func downloadSVGImage(urlString: String) {
         #warning("chain getIso and download together, cell shouldnt care about downloading at all.")
         WebService.shared.downloadImage(from: urlString) { result in
@@ -84,18 +89,19 @@ class RCCountryCell: UICollectionViewCell {
             self.flagImageView.image = image
         }
     }
-    
+     */
+
+    /*
     func set(country: Country) {
         self.country = country
         self.countryLabel.text = country.name
         self.capitalLabel.text = country.capital
         self.setFlag(for: country)
     }
+     */
 }
 
-
 #warning("Use this instead of set(country) method")
-/**
  extension RCCountryCell: SAK.UI.Fillable {
      typealias ObjectType = Country
      
@@ -106,4 +112,3 @@ class RCCountryCell: UICollectionViewCell {
      }
  }
 
- */

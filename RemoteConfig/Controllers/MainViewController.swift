@@ -73,9 +73,9 @@ class MainViewController: UIViewController {
         }
     }
     private func fetchValuesFromRemoteConfig() {
-        self.rcLabel.text = RemoteConfigService.shared.string(forKey: ValueKey.labelText)
-        self.rcSwitch.setOn(RemoteConfigService.shared.bool(forKey: ValueKey.boolCheck), animated: true)
-        self.rcNumberLabel.text = String(RemoteConfigService.shared.int(forKey: ValueKey.numberValue))
+        self.rcLabel.text = RemoteConfigService.shared.string(forKey: RemoteConfigKey.labelText)
+        self.rcSwitch.setOn(RemoteConfigService.shared.bool(forKey: RemoteConfigKey.boolCheck), animated: true)
+        self.rcNumberLabel.text = String(RemoteConfigService.shared.int(forKey: RemoteConfigKey.numberValue))
     }
     
     // MARK: - Actions

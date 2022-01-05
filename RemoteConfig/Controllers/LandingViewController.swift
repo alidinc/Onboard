@@ -36,7 +36,6 @@ class LandingViewController: UIViewController {
         options.segmenterMode = .singleImage
         options.shouldEnableRawSizeMask = false
         let segmenter = Segmenter.segmenter(options: options)
-        
         return segmenter
     }()
 
@@ -124,23 +123,33 @@ extension LandingViewController: SelfieRemovalDelegate, ObjectRemovalDelegate {
     #warning("Move to main class definition")
     #warning("a better naming, maybe removeBackground from image")
     private func setBackgroundRemover(for image: UIImage) {
-        FaceDetector.shared.faceDetectRequest(for: image) { [weak self] result in
+        FaceDetector().faceDetectRequest(for: image) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let faceDetection):
                 let confidence = String(format: "%.2f", faceDetection.confidence * 100)
-                self.presentAlertWithHandlers(title: "Face detected", message: "There's a face in this image with a confidence of %\(confidence) MLKitSegmentationSelfie will be applied.", buttonTitle: "OK") { _ in
-                    self.removeBackgroundFromSelfieWithMLKit(on: image, for: self.imageView, with: self.segmenter)
+                self.presentAlertWithHandlers(title: "Face detected",
+                                              message: "There's a face in this image with a confidence of %\(confidence) MLKitSegmentationSelfie will be applied.",
+                                              buttonTitle: "OK") { _ in
+                    self.removeBackgroundFromSelfieWithMLKit(on: image, with: self.segmenter) { result in
+                        DispatchQueue.main.async {
+                            if let image = result {
+                                self.imageView.image = image
+                            }
+                        }
+                    }
                 } cancelHandler: { _ in
                     DispatchQueue.main.async {
                         self.imageView.image = image
                     }
                 }
             case .failure(let error):
-                self.presentAlertWithHandlers(title: "No face detected", message: error.rawValue, buttonTitle: "OK") { _ in
+                self.presentAlertWithHandlers(title: "No face detected",
+                                              message: error.rawValue,
+                                              buttonTitle: "OK") { _ in
                     self.removeBackgroundFromObjectsWithCoreML(from: image) { imageOutput in
                         DispatchQueue.main.async {
-                            self.imageView.image = imageOutput.maskInputImage(from: image)
+                            self.imageView.image = imageOutput?.maskInputImage(from: image)
                         }
                     }
                 } cancelHandler: { _ in

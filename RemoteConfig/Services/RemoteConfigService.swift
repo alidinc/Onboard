@@ -9,7 +9,7 @@ import Foundation
 import Firebase
 
 #warning("Better naming such as RemoteConfigKey")
-enum ValueKey: String {
+enum RemoteConfigKey: String {
     case labelText
     case boolCheck
     case numberValue
@@ -33,19 +33,19 @@ class RemoteConfigService {
     func setDefaultsForRC(with defaults: [String: Any?]) {
         self.remoteConfig.setDefaults(defaults as? [String: NSObject])
     }
-    func bool(forKey key: ValueKey) -> Bool {
+    func bool(forKey key: RemoteConfigKey) -> Bool {
       self.remoteConfig[key.rawValue].boolValue
     }
 
-    func string(forKey key: ValueKey) -> String {
+    func string(forKey key: RemoteConfigKey) -> String {
       self.remoteConfig[key.rawValue].stringValue ?? ""
     }
 
-    func int(forKey key: ValueKey) -> Int {
+    func int(forKey key: RemoteConfigKey) -> Int {
       self.remoteConfig[key.rawValue].numberValue.intValue
     }
 
-    func jsonValue<T: Codable>(forKey key: ValueKey, expecting: T.Type) -> T {
+    func jsonValue<T: Codable>(forKey key: RemoteConfigKey, expecting: T.Type) -> T {
         let dataValue = self.remoteConfig.configValue(forKey: key.rawValue).dataValue
         do {
             return try JSONDecoder().decode(expecting, from: dataValue)

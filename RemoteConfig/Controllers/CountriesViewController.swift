@@ -43,7 +43,7 @@ class CountriesViewController: UIViewController {
     
     private func fetchDataFromRemoteConfig() {
         self.countries = RemoteConfigService.shared.jsonValue(
-            forKey: ValueKey.geoData,
+            forKey: RemoteConfigKey.geoData,
             expecting: GeoData.self).data
     }
 }
@@ -57,7 +57,7 @@ extension CountriesViewController {
             guard let cell = collectionView.dequeueReusableCell(
                 withReuseIdentifier: RCCountryCell.reuseID,
                 for: indexPath) as? RCCountryCell else { return UICollectionViewCell() }
-            cell.set(country: self.countries[indexPath.row])
+                cell.prepareForDrawing(with: self.countries[indexPath.row])
             return cell
         })
     }

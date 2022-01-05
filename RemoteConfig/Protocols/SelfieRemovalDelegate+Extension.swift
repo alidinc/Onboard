@@ -11,6 +11,7 @@ import UIKit
 protocol SelfieRemovalDelegate: AnyObject { }
 
 extension SelfieRemovalDelegate {
+    typealias RemoveBackgroundCallback = ((_ result: UIImage?) -> Void)
     
     /*typealias RemoveBackgroundCallback = ((_ result: UIImage?) -> Void)
     
@@ -32,20 +33,21 @@ extension SelfieRemovalDelegate {
         }
     }*/
     
-    func removeBackgroundFromSelfieWithMLKit(on image: UIImage, for imageView: UIImageView, with segmenter: Segmenter) {
+    func removeBackgroundFromSelfieWithMLKit(on image: UIImage, with segmenter: Segmenter, completion: @escaping RemoveBackgroundCallback) {
         let visionImage = VisionImage(image: image)
         visionImage.orientation = image.imageOrientation
 
         segmenter.process(visionImage) { [weak self] mask, error in
-            guard let self = self, error == nil, let mask = mask else { return }
-            guard let imageBuffer = self.createImageBuffer(from: image) else { return }
+            guard let self = self,
+                  error == nil, let mask = mask,
+                  let imageBuffer = self.createImageBuffer(from: image) else { completion(nil); return }
 
             self.applySegmentationMask(
                 mask: mask, to: imageBuffer,
                 backgroundColor: UIColor.purple.withAlphaComponent(0.5),
                 foregroundColor: nil)
             let maskedImage = self.createUIImage(from: imageBuffer, orientation: .up)
-            imageView.image = maskedImage
+            completion(maskedImage)
         }
     }
 

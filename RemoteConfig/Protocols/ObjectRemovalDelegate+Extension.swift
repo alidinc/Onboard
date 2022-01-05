@@ -12,10 +12,13 @@ import CoreML
 protocol ObjectRemovalDelegate: AnyObject { }
 
 extension ObjectRemovalDelegate {
-    func removeBackgroundFromObjectsWithCoreML(from inputImage: UIImage, completion: @escaping (UIImage) -> Void) {
+    func removeBackgroundFromObjectsWithCoreML(from inputImage: UIImage, completion: @escaping (UIImage?) -> Void) {
 #warning("Don't supress")
-        guard let mlModel = try? DeepLabV3(configuration: .init()).model else { return }
-        guard let visionModel = try? VNCoreMLModel(for: mlModel) else { return }
+        guard let mlModel = try? DeepLabV3(configuration: .init()).model,
+              let visionModel = try? VNCoreMLModel(for: mlModel) else {
+            completion(nil)
+            return
+        }
         
         /*
              guard let mlModel = try? DeepLabV3(configuration: .init()).model,
@@ -32,15 +35,12 @@ extension ObjectRemovalDelegate {
                let segmentationMask = segmentationMap.image(min: 0, max: 1) {
 
 #warning("Don't supress")
-                guard let resizedMaskImage = segmentationMask.resizedImage(for: inputImage.size) else { return }
+                guard let resizedMaskImage = segmentationMask.resizedImage(for: inputImage.size) else { completion(nil); return }
                 completion(resizedMaskImage)
             }
         }
         request.imageCropAndScaleOption = .scaleFill
-        self.requestHandler(request: request, for: inputImage)
-    }
 
-    private func requestHandler(request: VNCoreMLRequest, for inputImage: UIImage) {
         DispatchQueue.global().async {
             if let cgImage = inputImage.cgImage {
                 let handler = VNImageRequestHandler(cgImage: cgImage, options: [:])
@@ -48,7 +48,7 @@ extension ObjectRemovalDelegate {
                     try handler.perform([request])
                 } catch {
                     #warning("Check this, not sure if would supress")
-                    print(error)
+                    completion(nil)
                 }
             }
         }
