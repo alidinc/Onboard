@@ -13,7 +13,20 @@ class WebService {
     private init() {}
     private let cache = NSCache<NSString, UIImage>()
     // MARK: - Methods
-    private func showNetworkResponse(data : Data){
+    
+    #warning("po response.rawResponse")
+    /*var rawResponse: String = {
+        do {
+            if let jsonResult = try JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary {
+                print(jsonResult)
+            }
+        } catch let error {
+            print(error.localizedDescription)
+        }
+    }*/
+    
+    #warning("Better naming, show means UI related")
+    private func showNetworkResponse(data: Data){
         do {
             if let jsonResult = try JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary {
                 print(jsonResult)

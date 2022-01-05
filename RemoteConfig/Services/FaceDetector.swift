@@ -15,6 +15,7 @@ enum Result<Success, Failure> {
 }
 
 class FaceDetector {
+    #warning("No reason to be singleton")
     static let shared = FaceDetector()
     private init() { }
 

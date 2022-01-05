@@ -8,6 +8,7 @@
 import Foundation
 import Firebase
 
+#warning("Better naming such as RemoteConfigKey")
 enum ValueKey: String {
     case labelText
     case boolCheck

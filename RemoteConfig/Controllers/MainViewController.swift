@@ -17,6 +17,7 @@ class MainViewController: UIViewController {
         label.font = .systemFont(ofSize: 20)
         return label
     }()
+    
     private var rcSwitch: UISwitch = {
         let rcSwitch = UISwitch()
         rcSwitch.translatesAutoresizingMaskIntoConstraints = false
@@ -76,6 +77,7 @@ class MainViewController: UIViewController {
         self.rcSwitch.setOn(RemoteConfigService.shared.bool(forKey: ValueKey.boolCheck), animated: true)
         self.rcNumberLabel.text = String(RemoteConfigService.shared.int(forKey: ValueKey.numberValue))
     }
+    
     // MARK: - Actions
     @objc func navigateToCountriesVC() {
         let countriesVC = CountriesViewController()

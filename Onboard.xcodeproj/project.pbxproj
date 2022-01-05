@@ -152,7 +152,6 @@
 				DAC15442277E508500D787DF /* Protocols */,
 				DA287035276CABD500A8B3E0 /* Models */,
 				DA0292C5276FF30600580401 /* View */,
-				DA03B91E277B3996003537EF /* ViewModels */,
 				DA287034276CAB8A00A8B3E0 /* Controllers */,
 				DA287032276CAB7E00A8B3E0 /* Services */,
 				DA287033276CAB8400A8B3E0 /* Utils */,
@@ -171,16 +170,10 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		DA03B91E277B3996003537EF /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
 		DA287030276CAB3400A8B3E0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DA4F6268277C67E7007EBDC0 /* DeepLabV3.mlmodel */,
 				DA0030CA276B7BA9001EDACB /* AppDelegate.swift */,
 				DA0030CC276B7BA9001EDACB /* SceneDelegate.swift */,
 				DA3290F62770122D003545C9 /* flags.json */,
@@ -230,7 +223,6 @@
 		DA287035276CABD500A8B3E0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				DA4F6268277C67E7007EBDC0 /* DeepLabV3.mlmodel */,
 				DA287036276CABE600A8B3E0 /* Country.swift */,
 				DA3290FE27702D84003545C9 /* Flag.swift */,
 			);

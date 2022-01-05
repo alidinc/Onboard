@@ -31,15 +31,24 @@ class LandingViewController: UIViewController {
     private let isCameraAvailable = UIImagePickerController.isCameraDeviceAvailable(.front) ||
     UIImagePickerController.isCameraDeviceAvailable(.rear)
     private let imageView = RCImageView(frame: .zero)
-    private var segmenter: Segmenter!
+    private lazy var segmenter: Segmenter = {
+        let options = SelfieSegmenterOptions()
+        options.segmenterMode = .singleImage
+        options.shouldEnableRawSizeMask = false
+        let segmenter = Segmenter.segmenter(options: options)
+        
+        return segmenter
+    }()
 
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         setupImagePicker()
-        setupSegmenter()
+        #warning("Revert if not working")
+        // setupSegmenter()
     }
+    
     // MARK: - Methods
     private func setupView() {
         view.backgroundColor = .lightGray
@@ -61,20 +70,22 @@ class LandingViewController: UIViewController {
             make.trailing.equalToSuperview().offset(-padding)
         }
     }
-    private func setupSegmenter() {
+    
+    /*private func setupSegmenter() {
         let options = SelfieSegmenterOptions()
         options.segmenterMode = .singleImage
         options.shouldEnableRawSizeMask = false
         segmenter = Segmenter.segmenter(options: options)
-    }
+    }*/
 }
 
-// MARK: - UIImagePickerController
+// MARK: - UINavigationControllerDelegate & UIImagePickerControllerDelegate
 extension LandingViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     private func setupImagePicker() {
         imagePicker.allowsEditing = true
         imagePicker.delegate = self
     }
+    
     @objc private func openPhotoLibrary() {
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
             imagePicker.sourceType = .photoLibrary
@@ -85,6 +96,7 @@ extension LandingViewController: UINavigationControllerDelegate, UIImagePickerCo
                 .present(in: self, completion: nil)
         }
     }
+    
     @objc private func openCamera() {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             imagePicker.sourceType = .camera
@@ -107,7 +119,10 @@ extension LandingViewController: UINavigationControllerDelegate, UIImagePickerCo
     }
 }
 
+// MARK: - SelfieRemovalDelegate, ObjectRemovalDelegate
 extension LandingViewController: SelfieRemovalDelegate, ObjectRemovalDelegate {
+    #warning("Move to main class definition")
+    #warning("a better naming, maybe removeBackground from image")
     private func setBackgroundRemover(for image: UIImage) {
         FaceDetector.shared.faceDetectRequest(for: image) { [weak self] result in
             guard let self = self else { return }
