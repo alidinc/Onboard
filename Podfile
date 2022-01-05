@@ -6,9 +6,9 @@ target 'Onboard' do
   use_frameworks!
 
   # Pods for RemoteConfig
-pod ‘Firebase’
-pod ‘Firebase/Analytics’
-pod ‘Firebase/RemoteConfig’
+pod 'Firebase'
+pod 'Firebase/Analytics'
+pod 'Firebase/RemoteConfig'
 pod 'GoogleMLKit/SegmentationSelfie', '2.5.0'
 pod 'SwiftLint'
 pod 'R.swift'
