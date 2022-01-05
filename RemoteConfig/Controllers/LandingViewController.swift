@@ -20,6 +20,7 @@ class LandingViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
+
     private lazy var pickFromLibraryButton: UIButton = {
         let button = UIButton()
         button.addTarget(self, action: #selector(openPhotoLibrary), for: .touchUpInside)
@@ -27,10 +28,22 @@ class LandingViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
+
     private let imagePicker = UIImagePickerController()
     private let isCameraAvailable = UIImagePickerController.isCameraDeviceAvailable(.front) ||
     UIImagePickerController.isCameraDeviceAvailable(.rear)
-    private let imageView = RCImageView(frame: .zero)
+    private lazy var imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = .init(named: "image")!
+        imageView.layer.cornerRadius = 22
+        imageView.contentMode = .scaleAspectFit
+        imageView.clipsToBounds = true
+        imageView.layer.masksToBounds = true
+        imageView.image = .init(named: "image")
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+
+        return imageView
+    }()
     private lazy var segmenter: Segmenter = {
         let options = SelfieSegmenterOptions()
         options.segmenterMode = .singleImage
@@ -44,8 +57,6 @@ class LandingViewController: UIViewController {
         super.viewDidLoad()
         setupView()
         setupImagePicker()
-        #warning("Revert if not working")
-        // setupSegmenter()
     }
     
     // MARK: - Methods
@@ -61,68 +72,16 @@ class LandingViewController: UIViewController {
             make.height.equalToSuperview().multipliedBy(0.4)
         }
         captureButton.snp.makeConstraints { make in
-            make.top.equalTo(imageView.snp_bottomMargin).offset(padding)
+            make.top.equalTo(imageView.snp.bottom).offset(padding)
             make.leading.equalToSuperview().offset(padding)
         }
         pickFromLibraryButton.snp.makeConstraints { make in
-            make.top.equalTo(imageView.snp_bottomMargin).offset(padding)
+            make.top.equalTo(imageView.snp.bottom).offset(padding)
             make.trailing.equalToSuperview().offset(-padding)
         }
     }
-    
-    /*private func setupSegmenter() {
-        let options = SelfieSegmenterOptions()
-        options.segmenterMode = .singleImage
-        options.shouldEnableRawSizeMask = false
-        segmenter = Segmenter.segmenter(options: options)
-    }*/
-}
 
-// MARK: - UINavigationControllerDelegate & UIImagePickerControllerDelegate
-extension LandingViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-    private func setupImagePicker() {
-        imagePicker.allowsEditing = true
-        imagePicker.delegate = self
-    }
-    
-    @objc private func openPhotoLibrary() {
-        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-            imagePicker.sourceType = .photoLibrary
-            present(imagePicker, animated: true)
-        } else {
-            SAK.UI.AlertControllerBuilder(message: "No access to photo library",
-                                          actions: [.okay], style: .alert)
-                .present(in: self, completion: nil)
-        }
-    }
-    
-    @objc private func openCamera() {
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            imagePicker.sourceType = .camera
-            imagePicker.showsCameraControls = true
-            present(imagePicker, animated: true)
-        } else {
-            SAK.UI.AlertControllerBuilder(message: "No camera device found",
-                                          actions: [.okay], style: .alert)
-                .present(in: self, completion: nil)
-        }
-    }
-
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let editedImage = info[.editedImage] as? UIImage {
-            setBackgroundRemover(for: editedImage)
-        } else if let originalImage = info[.originalImage] as? UIImage {
-            setBackgroundRemover(for: originalImage)
-        }
-        self.dismiss(animated: true, completion: nil)
-    }
-}
-
-// MARK: - SelfieRemovalDelegate, ObjectRemovalDelegate
-extension LandingViewController: SelfieRemovalDelegate, ObjectRemovalDelegate {
-    #warning("Move to main class definition")
-    #warning("a better naming, maybe removeBackground from image")
-    private func setBackgroundRemover(for image: UIImage) {
+    private func removeBackgroundImage(for image: UIImage) {
         FaceDetector().faceDetectRequest(for: image) { [weak self] result in
             guard let self = self else { return }
             switch result {
@@ -161,3 +120,46 @@ extension LandingViewController: SelfieRemovalDelegate, ObjectRemovalDelegate {
         }
     }
 }
+
+// MARK: - UINavigationControllerDelegate & UIImagePickerControllerDelegate
+extension LandingViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    private func setupImagePicker() {
+        imagePicker.allowsEditing = true
+        imagePicker.delegate = self
+    }
+    
+    @objc private func openPhotoLibrary() {
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            imagePicker.sourceType = .photoLibrary
+            present(imagePicker, animated: true)
+        } else {
+            SAK.UI.AlertControllerBuilder(message: "No access to photo library",
+                                          actions: [.okay], style: .alert)
+                .present(in: self, completion: nil)
+        }
+    }
+    
+    @objc private func openCamera() {
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            imagePicker.sourceType = .camera
+            imagePicker.showsCameraControls = true
+            present(imagePicker, animated: true)
+        } else {
+            SAK.UI.AlertControllerBuilder(message: "No camera device found",
+                                          actions: [.okay], style: .alert)
+                .present(in: self, completion: nil)
+        }
+    }
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let editedImage = info[.editedImage] as? UIImage {
+            removeBackgroundImage(for: editedImage)
+        } else if let originalImage = info[.originalImage] as? UIImage {
+            removeBackgroundImage(for: originalImage)
+        }
+        self.dismiss(animated: true, completion: nil)
+    }
+}
+
+// MARK: - SelfieRemovalDelegate, ObjectRemovalDelegate
+extension LandingViewController: SelfieRemovalDelegate, ObjectRemovalDelegate { }

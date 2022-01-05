@@ -23,6 +23,7 @@ class MainViewController: UIViewController {
         rcSwitch.translatesAutoresizingMaskIntoConstraints = false
         return rcSwitch
     }()
+
     private var rcNumberLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -30,6 +31,7 @@ class MainViewController: UIViewController {
         label.textColor = .green
         return label
     }()
+
     private lazy var rcButton: UIButton = {
         let button = UIButton()
         button.addTarget(self, action: #selector(navigateToCountriesVC), for: .touchUpInside)
@@ -37,6 +39,7 @@ class MainViewController: UIViewController {
         button.setTitle(R.string.localizable.tapHereToSeeCapitals(), for: .normal)
         return button
     }()
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,7 +67,7 @@ class MainViewController: UIViewController {
             make.centerX.centerY.equalToSuperview()
         }
         rcButton.snp.makeConstraints { make in
-            make.top.equalTo(rcSwitch.snp_bottomMargin).offset(padding)
+            make.top.equalTo(rcSwitch.snp.bottom).offset(padding)
             make.leading.trailing.equalToSuperview().offset(padding)
         }
         rcNumberLabel.snp.makeConstraints { make in

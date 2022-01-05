@@ -13,38 +13,19 @@ protocol SelfieRemovalDelegate: AnyObject { }
 extension SelfieRemovalDelegate {
     typealias RemoveBackgroundCallback = ((_ result: UIImage?) -> Void)
     
-    /*typealias RemoveBackgroundCallback = ((_ result: UIImage?) -> Void)
-    
     func removeBackgroundFromSelfieWithMLKit(on image: UIImage, with segmenter: Segmenter, completion: @escaping RemoveBackgroundCallback) {
         let visionImage = VisionImage(image: image)
         visionImage.orientation = image.imageOrientation
 
         segmenter.process(visionImage) { [weak self] mask, error in
-            #warning("Supressing errors, at least completion with nil")
-            guard let self = self, error == nil, let mask = mask else { return }
-            guard let imageBuffer = self.createImageBuffer(from: image) else { return }
-
-            self.applySegmentationMask(
-                mask: mask, to: imageBuffer,
-                backgroundColor: UIColor.purple.withAlphaComponent(0.5),
-                foregroundColor: nil)
-            let maskedImage = self.createUIImage(from: imageBuffer, orientation: .up)
-            completion(maskedImage)
-        }
-    }*/
-    
-    func removeBackgroundFromSelfieWithMLKit(on image: UIImage, with segmenter: Segmenter, completion: @escaping RemoveBackgroundCallback) {
-        let visionImage = VisionImage(image: image)
-        visionImage.orientation = image.imageOrientation
-
-        segmenter.process(visionImage) { [weak self] mask, error in
-            guard let self = self,
-                  error == nil, let mask = mask,
+            guard error == nil,
+                  let self = self,
+                  let mask = mask,
                   let imageBuffer = self.createImageBuffer(from: image) else { completion(nil); return }
 
             self.applySegmentationMask(
                 mask: mask, to: imageBuffer,
-                backgroundColor: UIColor.purple.withAlphaComponent(0.5),
+                backgroundColor: .red.withAlphaComponent(0.5),
                 foregroundColor: nil)
             let maskedImage = self.createUIImage(from: imageBuffer, orientation: .up)
             completion(maskedImage)
@@ -56,7 +37,6 @@ extension SelfieRemovalDelegate {
         let ciImage = CIImage(cvPixelBuffer: imageBuffer)
         let context = CIContext(options: nil)
         guard let cgImage = context.createCGImage(ciImage, from: ciImage.extent) else { return nil }
-        
         let image = UIImage(cgImage: cgImage, scale: 1.0, orientation: orientation)
         return image
     }

@@ -8,7 +8,6 @@
 import Foundation
 import Firebase
 
-#warning("Better naming such as RemoteConfigKey")
 enum RemoteConfigKey: String {
     case labelText
     case boolCheck
@@ -21,6 +20,7 @@ class RemoteConfigService {
     private let remoteConfig = RemoteConfig.remoteConfig()
     static let shared = RemoteConfigService()
     private init() {}
+
     // MARK: - Methods
     func fetchRemoteConfig(completion: @escaping () -> Void) {
         remoteConfig.fetch(withExpirationDuration: 0) { [weak self] (_, error) in
@@ -30,9 +30,11 @@ class RemoteConfigService {
             completion()
         }
     }
+
     func setDefaultsForRC(with defaults: [String: Any?]) {
         self.remoteConfig.setDefaults(defaults as? [String: NSObject])
     }
+
     func bool(forKey key: RemoteConfigKey) -> Bool {
       self.remoteConfig[key.rawValue].boolValue
     }

@@ -61,6 +61,7 @@ extension CountriesViewController {
             return cell
         })
     }
+
     func updateDataWithSnapshot(on countries: [Country]) {
         var snapshot = NSDiffableDataSourceSnapshot<Section, Country>()
         snapshot.appendSections([.main])

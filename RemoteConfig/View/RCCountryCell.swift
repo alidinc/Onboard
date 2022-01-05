@@ -13,7 +13,18 @@ class RCCountryCell: UICollectionViewCell {
 
     // MARK: - Properties
     static let reuseID = R.string.localizable.countryCell()
-    private let flagImageView = RCImageView(frame: .zero)
+    private lazy var flagImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = .init(named: "image")!
+        imageView.layer.cornerRadius = 22
+        imageView.contentMode = .scaleAspectFit
+        imageView.clipsToBounds = true
+        imageView.layer.masksToBounds = true
+        imageView.image = .init(named: "image")
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+
+        return imageView
+    }()
     private let countryLabel = RCLabel(textAlignment: .left, fontSize: 12, weight: .bold)
     private let capitalLabel = RCLabel(textAlignment: .left, fontSize: 10, weight: .medium)
     private let stackView: UIStackView = {
@@ -53,7 +64,6 @@ class RCCountryCell: UICollectionViewCell {
             make.height.equalTo(60)
         }
         stackView.snp.makeConstraints { make in
-            #warning("use this instead flagImageView.snp.bottom")
             make.top.equalTo(flagImageView.snp.bottom).offset(padding)
             make.leading.trailing.equalToSuperview().offset(padding)
         }
@@ -61,7 +71,6 @@ class RCCountryCell: UICollectionViewCell {
     
     private func setFlag(for country: Country) {
         WebService.shared.getISO(with: country.name) { [weak self] result in
-            #warning("Prevent reuse issue")
             if country != self?.country {
                 return
             }
@@ -80,28 +89,8 @@ class RCCountryCell: UICollectionViewCell {
             }
         }
     }
-
-    /*
-    private func downloadSVGImage(urlString: String) {
-        #warning("chain getIso and download together, cell shouldnt care about downloading at all.")
-        WebService.shared.downloadImage(from: urlString) { result in
-            guard let image = result else { return }
-            self.flagImageView.image = image
-        }
-    }
-     */
-
-    /*
-    func set(country: Country) {
-        self.country = country
-        self.countryLabel.text = country.name
-        self.capitalLabel.text = country.capital
-        self.setFlag(for: country)
-    }
-     */
 }
 
-#warning("Use this instead of set(country) method")
  extension RCCountryCell: SAK.UI.Fillable {
      typealias ObjectType = Country
      

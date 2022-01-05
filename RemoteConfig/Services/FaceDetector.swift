@@ -15,9 +15,6 @@ enum Result<Success, Failure> {
 }
 
 class FaceDetector {
-    #warning("No reason to be singleton")
-
-    // MARK: - Methods
     func faceDetectRequest(for originalImage: UIImage, completion: @escaping (Result<VNFaceObservation, RCError>) -> Void) {
         let request = VNDetectFaceRectanglesRequest { request, error in
             if error != nil {

@@ -12,21 +12,8 @@ class WebService {
     static let shared = WebService()
     private init() {}
     private let cache = NSCache<NSString, UIImage>()
+
     // MARK: - Methods
-    
-    #warning("po response.rawResponse")
-//    var rawResponse: String = {
-//        do {
-//            if let jsonResult = try JSONSerialization.jsonObject(with: <#Data#>, options: []) as? NSDictionary {
-//                print(jsonResult)
-//            }
-//        } catch let error {
-//            print(error.localizedDescription)
-//        }
-//    }()
-    
-    #warning("Better naming, show means UI related")
-    /*
     private func showNetworkResponse(data: Data){
         do {
             if let jsonResult = try JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary {
@@ -36,7 +23,7 @@ class WebService {
             print(error.localizedDescription)
         }
     }
-    */
+
     func getISO(with searchKey: String, completion: @escaping (Result<Flag, RCError>) -> Void) {
         let parameters = ["country": "\(searchKey)"]
         guard let url = URL(string: "https://countriesnow.space/api/v0.1/countries/flag/images") else { return }
@@ -65,6 +52,7 @@ class WebService {
         }
         task.resume()
     }
+
     func downloadImage(from urlString: String, completion: @escaping (UIImage?) -> Void) {
         let cacheKey = NSString(string: urlString)
         if let image = cache.object(forKey: cacheKey) {
