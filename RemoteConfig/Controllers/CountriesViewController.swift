@@ -22,6 +22,7 @@ class CountriesViewController: UIViewController {
         return collectionView
     }()
     private var countries = [Country]()
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,10 +35,12 @@ class CountriesViewController: UIViewController {
         super.viewDidAppear(animated)
         updateDataWithSnapshot(on: countries)
     }
+    
     // MARK: - Methods
     private func setupView() {
         view.addSubview(collectionView)
     }
+    
     private func fetchDataFromRemoteConfig() {
         self.countries = RemoteConfigService.shared.jsonValue(
             forKey: ValueKey.geoData,

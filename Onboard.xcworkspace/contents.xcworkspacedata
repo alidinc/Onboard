@@ -2,12 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/alidinc/Repos/remoteConfig/Onboard.xcodeproj">
+      location = "group:Onboard.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Onboard.xcodeproj">
    </FileRef>
 </Workspace>

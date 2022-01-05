@@ -7,9 +7,9 @@
 
 import Foundation
 
-// MARK: - DataClass
 struct Flag: Codable {
     let name: String?
     let flag: String?
-    let iso2, iso3: String?
+    let iso2: String?
+    let iso3: String?
 }
